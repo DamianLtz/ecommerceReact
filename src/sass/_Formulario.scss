@@ -1,0 +1,181 @@
+.body-style {
+  // background-image: url(../assets/img/main/back2.jpg)
+  // background-image: url(../assets/back-special.webp)
+  background: #202020;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+.container-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 375px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  // backdrop-filter: blur(8px)
+  background-color: #f8f9fa;
+  border: 0.7px solid rgba(32, 32, 32, 0.2);
+  align-items: center;
+  justify-content: space-around;
+  color: $color-black;
+  padding: 2rem;
+}
+.inputs {
+  width: 100%;
+}
+.name-input {
+  display: flex;
+  padding-bottom: 0.5rem;
+}
+.name-input {
+  input {
+    width: 100%;
+    padding: 0.5rem;
+    outline: none;
+  }
+}
+.input-nombre {
+  label {
+    padding: 0.5rem 0;
+    color: $color-black;
+  }
+  input {
+    border-radius: 3px 0 0 3px;
+  }
+  p {
+    font-size: 0.875rem;
+  }
+}
+.input-apellido {
+  label {
+    padding: 0.5rem 0;
+    color: $color-black;
+  }
+  input {
+    border-radius: 0 3px 3px 0;
+  }
+  p {
+    font-size: 0.875rem;
+  }
+}
+.others-input {
+  display: flex;
+  flex-direction: column;
+  p {
+    font-size: 0.875rem;
+  }
+}
+.others-input {
+  label {
+    padding: 0.5rem 0;
+    color: $color-black;
+  }
+  input {
+    height: auto;
+    outline: none;
+    border-radius: 3px;
+    padding: 0.5rem;
+  }
+  input:placeholder {
+    color: #bfbfbf;
+  }
+}
+.input-correcto {
+  border: 2px solid $border-inputs;
+}
+.error-input {
+  border: 2px solid $error-input;
+}
+.btn-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .error-campos-vacios {
+    font-size: 14px;
+  }
+  p {
+    font-size: 0.75rem;
+    padding: 1rem 0;
+  }
+  button {
+    width: 260px;
+    height: 45px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    padding: 0;
+    background-color: $bg-color-registro;
+    color: $color-white;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:hover {
+      background-color: $bg-color-registro-hover;
+    }
+  }
+}
+.other-content {
+  width: 100%;
+  p {
+    text-align: center;
+    padding: 1rem 0;
+  }
+  div {
+    a {
+      pointer-events: none;
+      opacity: 0.65;
+    }
+  }
+}
+.boton-registro-aqui {
+  color: $color-blue;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size 0.2s;
+  &:hover {
+    color: $color-blue;
+    background-size: 100% 2px;
+  }
+}
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.5rem;
+  a {
+    display: block;
+    width: 120px;
+    height: 50px;
+    text-decoration: none;
+    line-height: 50px;
+    font-size: 1.6rem;
+    text-align: center;
+    border-radius: 3px;
+    color: #fff;
+    transition: all 1s, transform 0.35s;
+
+    margin: 0 0.5rem;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
+.links a:nth-child(1) {
+  background-color: $bg-color-red-uno;
+}
+.links a:nth-child(2) {
+  background-color: $bg-color-red-dos;
+}

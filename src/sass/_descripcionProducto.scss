@@ -1,0 +1,36 @@
+.bg-principal {
+  background: #000055; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #1cb5e0,
+    #000055
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #1cb5e0,
+    #000055
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.background-descripcion {
+  border-radius: 16px;
+}
+
+.left-arrow {
+  width: 24px;
+}
+
+.loader div {
+  margin: 0 0.25rem;
+}
+
+.producto {
+  width: 50%;
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
+}
+
+.description-truncate {
+  @include text-truncate-wrap-alt;
+}
