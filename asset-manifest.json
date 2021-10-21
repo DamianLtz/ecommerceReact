@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/ecommerceReact/static/css/main.cd627144.chunk.css",
+    "main.js": "/ecommerceReact/static/js/main.552ee391.chunk.js",
+    "main.js.map": "/ecommerceReact/static/js/main.552ee391.chunk.js.map",
+    "runtime-main.js": "/ecommerceReact/static/js/runtime-main.b6e606c2.js",
+    "runtime-main.js.map": "/ecommerceReact/static/js/runtime-main.b6e606c2.js.map",
+    "static/css/2.ed1298f3.chunk.css": "/ecommerceReact/static/css/2.ed1298f3.chunk.css",
+    "static/js/2.8198fa92.chunk.js": "/ecommerceReact/static/js/2.8198fa92.chunk.js",
+    "static/js/2.8198fa92.chunk.js.map": "/ecommerceReact/static/js/2.8198fa92.chunk.js.map",
+    "index.html": "/ecommerceReact/index.html",
+    "static/css/2.ed1298f3.chunk.css.map": "/ecommerceReact/static/css/2.ed1298f3.chunk.css.map",
+    "static/css/main.cd627144.chunk.css.map": "/ecommerceReact/static/css/main.cd627144.chunk.css.map",
+    "static/js/2.8198fa92.chunk.js.LICENSE.txt": "/ecommerceReact/static/js/2.8198fa92.chunk.js.LICENSE.txt",
+    "static/media/ArrowLeft.662a3576.svg": "/ecommerceReact/static/media/ArrowLeft.662a3576.svg",
+    "static/media/CaretDown.14322a24.svg": "/ecommerceReact/static/media/CaretDown.14322a24.svg",
+    "static/media/styles.scss": "/ecommerceReact/static/media/background-cards.470339a3.png",
+    "static/media/banner1.fd657695.jpg": "/ecommerceReact/static/media/banner1.fd657695.jpg",
+    "static/media/banner2.8708f40c.jpg": "/ecommerceReact/static/media/banner2.8708f40c.jpg",
+    "static/media/banner3.db4829e7.jpg": "/ecommerceReact/static/media/banner3.db4829e7.jpg",
+    "static/media/banner4.07c81d51.jpg": "/ecommerceReact/static/media/banner4.07c81d51.jpg",
+    "static/media/banner5.7427a819.jpg": "/ecommerceReact/static/media/banner5.7427a819.jpg",
+    "static/media/coin.86d4f8d7.png": "/ecommerceReact/static/media/coin.86d4f8d7.png",
+    "static/media/electro.c25ab781.png": "/ecommerceReact/static/media/electro.c25ab781.png",
+    "static/media/electrobelleza.ac790bfc.png": "/ecommerceReact/static/media/electrobelleza.ac790bfc.png",
+    "static/media/envio.2cdeb718.svg": "/ecommerceReact/static/media/envio.2cdeb718.svg",
+    "static/media/github-icon.95d2d1e1.svg": "/ecommerceReact/static/media/github-icon.95d2d1e1.svg",
+    "static/media/logo.89a8d0ca.svg": "/ecommerceReact/static/media/logo.89a8d0ca.svg",
+    "static/media/motog9plus.4fd0b662.png": "/ecommerceReact/static/media/motog9plus.4fd0b662.png",
+    "static/media/pago.3aa4aa84.svg": "/ecommerceReact/static/media/pago.3aa4aa84.svg",
+    "static/media/search.e454275b.svg": "/ecommerceReact/static/media/search.e454275b.svg",
+    "static/media/shopping-cart.25d65fd4.svg": "/ecommerceReact/static/media/shopping-cart.25d65fd4.svg",
+    "static/media/tienda.32e0e201.svg": "/ecommerceReact/static/media/tienda.32e0e201.svg",
+    "static/media/twitter-icon.5058ccda.svg": "/ecommerceReact/static/media/twitter-icon.5058ccda.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b6e606c2.js",
+    "static/css/2.ed1298f3.chunk.css",
+    "static/js/2.8198fa92.chunk.js",
+    "static/css/main.cd627144.chunk.css",
+    "static/js/main.552ee391.chunk.js"
+  ]
+}
