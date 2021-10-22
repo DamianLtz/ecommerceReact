@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/ecommerceReact/static/css/main.cd627144.chunk.css",
-    "main.js": "/ecommerceReact/static/js/main.552ee391.chunk.js",
-    "main.js.map": "/ecommerceReact/static/js/main.552ee391.chunk.js.map",
+    "main.css": "/ecommerceReact/static/css/main.90526ef8.chunk.css",
+    "main.js": "/ecommerceReact/static/js/main.a641e767.chunk.js",
+    "main.js.map": "/ecommerceReact/static/js/main.a641e767.chunk.js.map",
     "runtime-main.js": "/ecommerceReact/static/js/runtime-main.b6e606c2.js",
     "runtime-main.js.map": "/ecommerceReact/static/js/runtime-main.b6e606c2.js.map",
     "static/css/2.ed1298f3.chunk.css": "/ecommerceReact/static/css/2.ed1298f3.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.8198fa92.chunk.js.map": "/ecommerceReact/static/js/2.8198fa92.chunk.js.map",
     "index.html": "/ecommerceReact/index.html",
     "static/css/2.ed1298f3.chunk.css.map": "/ecommerceReact/static/css/2.ed1298f3.chunk.css.map",
-    "static/css/main.cd627144.chunk.css.map": "/ecommerceReact/static/css/main.cd627144.chunk.css.map",
+    "static/css/main.90526ef8.chunk.css.map": "/ecommerceReact/static/css/main.90526ef8.chunk.css.map",
     "static/js/2.8198fa92.chunk.js.LICENSE.txt": "/ecommerceReact/static/js/2.8198fa92.chunk.js.LICENSE.txt",
     "static/media/ArrowLeft.662a3576.svg": "/ecommerceReact/static/media/ArrowLeft.662a3576.svg",
     "static/media/CaretDown.14322a24.svg": "/ecommerceReact/static/media/CaretDown.14322a24.svg",
@@ -26,7 +26,6 @@
     "static/media/envio.2cdeb718.svg": "/ecommerceReact/static/media/envio.2cdeb718.svg",
     "static/media/github-icon.95d2d1e1.svg": "/ecommerceReact/static/media/github-icon.95d2d1e1.svg",
     "static/media/logo.89a8d0ca.svg": "/ecommerceReact/static/media/logo.89a8d0ca.svg",
-    "static/media/motog9plus.4fd0b662.png": "/ecommerceReact/static/media/motog9plus.4fd0b662.png",
     "static/media/pago.3aa4aa84.svg": "/ecommerceReact/static/media/pago.3aa4aa84.svg",
     "static/media/search.e454275b.svg": "/ecommerceReact/static/media/search.e454275b.svg",
     "static/media/shopping-cart.25d65fd4.svg": "/ecommerceReact/static/media/shopping-cart.25d65fd4.svg",
@@ -37,7 +36,7 @@
     "static/js/runtime-main.b6e606c2.js",
     "static/css/2.ed1298f3.chunk.css",
     "static/js/2.8198fa92.chunk.js",
-    "static/css/main.cd627144.chunk.css",
-    "static/js/main.552ee391.chunk.js"
+    "static/css/main.90526ef8.chunk.css",
+    "static/js/main.a641e767.chunk.js"
   ]
 }
