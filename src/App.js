@@ -5,15 +5,19 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import Home from "./components/Home";
-import IniciarSesion from "./components/IniciarSesion";
-import RegistroUsuario from "./components/RegistroUsuario";
+import Home from "./components/home/Home";
+import IniciarSesion from "./components/logIn/IniciarSesion";
+import RegistroUsuario from "./components/registroUsuario/RegistroUsuario";
 import Carrito from "./routes/Carrito";
+import DescripcionProducto from "./routes/DescripcionProducto";
 
 function App() {
   return (
     <Router>
       <Switch>
+        <Route exact path={`/DescripcionProducto/:id`}>
+          <DescripcionProducto />
+        </Route>
         <Route exact path="/inicioSesion">
           <IniciarSesion />
         </Route>

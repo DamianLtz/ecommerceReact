@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-import Productos from "./MainCardProducto";
+import Productos from "./CardProducto";
 
 const CatalogoProductos = () => {
   const [productos, setProductos] = useState([]);
   const obtenerDatosJSON = async () => {
     const data = await fetch(
-      "https://api.jsonbin.io/b/612d354d259bcb6118ef5034/7"
+      "https://api.jsonbin.io/b/616cadd44a82881d6c619462/8"
     );
     const listaProductos = await data.json();
     const productos = listaProductos.listaProductos;

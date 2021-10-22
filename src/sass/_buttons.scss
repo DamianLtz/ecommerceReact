@@ -1,0 +1,52 @@
+.btn-drop-shadow {
+  &:focus {
+    transition: all 0.35s ease-in-out;
+    filter: drop-shadow(5px 5px 5px $sombra-btn-categorias);
+  }
+}
+.btn-categoria-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  background-color: #f4f4f4;
+  @media screen and (max-width: 576px) {
+    width: 80px;
+    height: 80px;
+  }
+
+  .btn-categoria {
+    display: grid;
+    place-items: center;
+    img {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 0.5rem;
+      @media screen and (max-width: 576px) {
+        margin-bottom: 0;
+      }
+    }
+    p {
+      padding: 0.25rem 0.5rem;
+      text-align: center;
+      font-weight: 700;
+    }
+  }
+}
+
+.btn-mas {
+  display: inline-block;
+  background-color: $color-blue;
+  color: #fff;
+  padding: 8px 24px;
+  margin: 1rem 0;
+  border-radius: 40px;
+  &:hover {
+    background-color: $color-white;
+    color: $color-blue;
+    border: 1px solid $color-blue;
+  }
+}

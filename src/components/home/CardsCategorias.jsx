@@ -1,7 +1,7 @@
 import React from "react";
 
-import electro from "../img/main/electro.png"
-import electroBelleza from "../img/main/electrobelleza.png"
+import electro from "../../img/main/electro.png"
+import electroBelleza from "../../img/main/electrobelleza.png"
 
 const CardsCategorias = () => {
   return (

@@ -2,11 +2,11 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
-import FirstImage from "../img/main/banner1.jpg";
-import SecondImage from "../img/main/banner2.jpg";
-import ThirdImage from "../img/main/banner3.jpg";
-import FourthImage from "../img/main/banner4.jpg"
-import FifthImage from "../img/main/banner5.jpg"
+import FirstImage from "../../img/main/banner1.jpg";
+import SecondImage from "../../img/main/banner2.jpg";
+import ThirdImage from "../../img/main/banner3.jpg";
+import FourthImage from "../../img/main/banner4.jpg"
+import FifthImage from "../../img/main/banner5.jpg"
 
 const MainCarouselAlt = () => {
   return (

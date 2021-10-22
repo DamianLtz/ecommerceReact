@@ -1,7 +1,7 @@
 import React from "react";
 
-import twitter from "../img/main/log-in/twitter-icon.svg";
-import github from "../img/main/log-in/github-icon.svg";
+import twitter from "../../img/main/log-in/twitter-icon.svg";
+import github from "../../img/main/log-in/github-icon.svg";
 
 const RegistroUsuario = () => {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import twitter from "../img/main/log-in/twitter-icon.svg"
-import github from "../img/main/log-in/github-icon.svg"
+import twitter from "../../img/main/log-in/twitter-icon.svg"
+import github from "../../img/main/log-in/github-icon.svg"
 
 const IniciarSesion = () => {
   return (

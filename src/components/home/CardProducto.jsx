@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import coin from "../img/main/coin.png"
+import coin from "../../img/main/coin.png"
 
 const MainCardProducto = ({image, oldPrice , title, description, price , id}) => {
   return (

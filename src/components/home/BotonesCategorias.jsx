@@ -4,7 +4,7 @@ const MainBotonesCategorias = () => {
   const [categorias, setcategorias] = useState([]);
   const obtenerDatosJSON = async () => {
     const data = await fetch(
-      "https://api.jsonbin.io/b/612d354d259bcb6118ef5034/7"
+      "https://api.jsonbin.io/b/616cadd44a82881d6c619462/8"
     );
     const listacategorias = await data.json();
     const categorias = listacategorias.listaCategorias;
@@ -22,7 +22,8 @@ const MainBotonesCategorias = () => {
             <button
               href="#"
               className="btn shadow-none btn-drop-shadow p-0 col-lg-2 col-md-3 col-sm-4 col-xs-6 gy-4 gy-lg-0"
-              id={categoria.id} key={categoria.id}
+              id={categoria.id}
+              key={categoria.id}
             >
               <div className="btn-categoria-container">
                 <div className="btn-categoria">

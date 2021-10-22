@@ -1,8 +1,8 @@
 import React from "react";
 
-import iconoEnvios from "../img/main/envio.svg"
-import iconoPago from "../img/main/pago.svg"
-import iconoTienda from "../img/main/tienda.svg"
+import iconoEnvios from "../../img/main/envio.svg"
+import iconoPago from "../../img/main/pago.svg"
+import iconoTienda from "../../img/main/tienda.svg"
 
 const MainSeccionesEnvios = () => {
   return (
