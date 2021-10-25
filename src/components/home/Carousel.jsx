@@ -1,10 +1,10 @@
 import React from "react";
 
-import FirstImage from "../../img/main/banner1.jpg"
-import SecondImage from "../../img/main/banner2.jpg"
-import ThirdImage from "../../img/main/banner3.jpg"
-import FourthImage from "../../img/main/banner4.jpg"
-import FifthImage from "../../img/main/banner5.jpg"
+import CarouselOne from "../../img/main/banner1.jpg";
+import CarouselTwo from "../../img/main/banner4.jpg";
+import CarouselThree from "../../img/main/banner6.jpg";
+import CarouselFour from "../../img/main/banner7.webp";
+import CarouselFive from "../../img/main/banner8.png";
 
 const MainCarousel = () => {
   return (
@@ -51,7 +51,7 @@ const MainCarousel = () => {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
-              src={FirstImage}
+              src={CarouselOne}
               className="d-block w-100"
               alt="..."
             />
@@ -62,7 +62,7 @@ const MainCarousel = () => {
           </div>
           <div className="carousel-item">
             <img
-              src={SecondImage}
+              src={CarouselTwo}
               className="d-block w-100"
               alt="..."
             />
@@ -73,7 +73,7 @@ const MainCarousel = () => {
           </div>
           <div className="carousel-item">
             <img
-              src={ThirdImage}
+              src={CarouselThree}
               className="d-block w-100"
               alt="..."
             />
@@ -84,7 +84,7 @@ const MainCarousel = () => {
           </div>
           <div className="carousel-item">
             <img
-              src={FourthImage}
+              src={CarouselFour}
               className="d-block w-100"
               alt="..."
             />
@@ -95,7 +95,7 @@ const MainCarousel = () => {
           </div>
           <div className="carousel-item">
             <img
-              src={FifthImage}
+              src={CarouselFive}
               className="d-block w-100"
               alt="..."
             />

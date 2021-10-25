@@ -43,36 +43,25 @@ const CatalogoProductos = () => {
       </div>
     </section>
   ) : (
-    <main className="main-principal">
+    <section className="main-principal">
       <div className="container">
-        <div className="d-flex align-items-center justify-content-center loader">
-          <div className="spinner-grow text-primary" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-          <div className="spinner-grow text-secondary" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-          <div className="spinner-grow text-success" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-          <div className="spinner-grow text-danger" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-          <div className="spinner-grow text-warning" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-          <div className="spinner-grow text-info" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-          <div className="spinner-grow text-crimson" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-          <div className="spinner-grow text-dark" role="status">
-            <span className="visually-hidden">Loading...</span>
+        <div class="showbox">
+          <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+              <circle
+                class="path"
+                cx="50"
+                cy="50"
+                r="20"
+                fill="none"
+                stroke-width="2"
+                stroke-miterlimit="10"
+              />
+            </svg>
           </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 };
 

@@ -43,7 +43,7 @@ const Header = () => {
               </li>
             </ul>
             <div className="cuenta--container" id="datos-cliente-container">
-              <Link className="shop-cart-container bg-transparent border-0" to="/carrito">
+              <Link className="shop-cart-container bg-transparent border-0"  to="/carrito">
                 <img src={shoppingCart} alt="" className="shop-cart" />
               </Link>
               <div

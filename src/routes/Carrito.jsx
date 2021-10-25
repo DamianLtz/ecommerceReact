@@ -1,13 +1,13 @@
 import React from "react";
 
-import Header from "./carrito/Header";
-import Footer from "./carrito/Footer";
+import Header from "../components/home/Header";
+import Footer from "../components/home/Footer";
 
 const Carrito = () => {
   return (
     <>
       <Header />
-      <main>
+      <main className="main-principal">
         <section className="container-lg">
           <h1 className="pt-5 fs-3">Tu carrito</h1>
           <div
@@ -16,7 +16,7 @@ const Carrito = () => {
           ></div>
         </section>
       </main>
-      <Footer />
+      <Footer visible="d-none"/>
     </>
   );
 };

@@ -2,11 +2,11 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
-import FirstImage from "../../img/main/banner1.jpg";
-import SecondImage from "../../img/main/banner2.jpg";
-import ThirdImage from "../../img/main/banner3.jpg";
-import FourthImage from "../../img/main/banner4.jpg"
-import FifthImage from "../../img/main/banner5.jpg"
+import CarouselOne from "../../img/main/banner1.jpg";
+import CarouselTwo from "../../img/main/banner4.jpg";
+import CarouselThree from "../../img/main/banner6.jpg";
+import CarouselFour from "../../img/main/banner7.webp";
+import CarouselFive from "../../img/main/banner8.png";
 
 const MainCarouselAlt = () => {
   return (
@@ -20,20 +20,40 @@ const MainCarouselAlt = () => {
       dynamicHeight={true}
       transitionTime={450}
     >
-      <div>
-        <img src={FirstImage} alt="" />
+      <div className="carousel-alt-item">
+        <img src={CarouselOne} alt="" />
+        <div className="container-title-carousel">
+          <h2 className="title-carousel">Auriculares Razer</h2>
+          <p className="subtitle-carousel">Distribuidor oficial de Razer!</p>
+        </div>
       </div>
-      <div>
-        <img src={SecondImage} alt="" />
+      <div className="carousel-alt-item">
+        <img src={CarouselTwo} alt="" />
+        <div className="container-title-carousel">
+          <h2 className="title-carousel">Haus Laboratories</h2>
+          <p className="subtitle-carousel">Maquillaje estreno en nuestra tienda!</p>
+        </div>
       </div>
-      <div>
-        <img src={ThirdImage} alt="" />
+      <div className="carousel-alt-item">
+        <img src={CarouselThree} alt="" />
+        <div className="container-title-carousel">
+          <h2 className="title-carousel">Nuevo iPhone 12</h2>
+          <p className="subtitle-carousel">Súper. Mega. Rápido.</p>
+        </div>
       </div>
-      <div>
-        <img src={FourthImage} alt="" />
+      <div className="carousel-alt-item">
+        <img src={CarouselFour} alt="" />
+        <div className="container-title-carousel">
+          <h2 className="title-carousel">Nuevo Moto G100</h2>
+          <p className="subtitle-carousel">El más potente del 2021</p>
+        </div>
       </div>
-      <div>
-        <img src={FifthImage} alt="" />
+      <div className="carousel-alt-item">
+        <img src={CarouselFive} alt="" />
+        <div className="container-title-carousel">
+          <h2 className="title-carousel">Carolina Herrera Good Girl</h2>
+          <p className="subtitle-carousel">Fragancia Importada</p>
+        </div>
       </div>
     </Carousel>
   );
