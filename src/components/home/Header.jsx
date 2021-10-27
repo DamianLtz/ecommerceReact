@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 import logo from "../../img/header/logo.svg";
 import search from "../../img/header/search.svg";
@@ -11,9 +11,9 @@ const Header = () => {
     <header>
       <nav className="navbar navbar-expand-lg navbar-light bg-light w-100 position-fixed fixed-top">
         <div className="container-lg">
-          <Link className="navbar-brand" to="/">
+          <NavLink className="navbar-brand" to="/">
             <img src={logo} alt="" className="logo" />
-          </Link>
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"
@@ -43,7 +43,10 @@ const Header = () => {
               </li>
             </ul>
             <div className="cuenta--container" id="datos-cliente-container">
-              <Link className="shop-cart-container bg-transparent border-0"  to="/carrito">
+              <Link
+                className="shop-cart-container bg-transparent border-0"
+                to="/carrito"
+              >
                 <img src={shoppingCart} alt="" className="shop-cart" />
               </Link>
               <div
