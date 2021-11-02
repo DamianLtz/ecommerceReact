@@ -1,7 +1,7 @@
 import React from "react";
 
-import electro from "../../img/main/electro.png"
-import electroBelleza from "../../img/main/electrobelleza.png"
+import electro from "../../img/main/electro.png";
+import electroBelleza from "../../img/main/electrobelleza.png";
 
 const CardsCategorias = () => {
   return (
@@ -19,11 +19,7 @@ const CardsCategorias = () => {
               </div>
             </div>
             <div>
-              <img
-                src={electro}
-                alt=""
-                className="img-fluid img-rectangle"
-              />
+              <img src={electro} alt="" className="img-fluid img-rectangle" />
             </div>
           </div>
         </div>

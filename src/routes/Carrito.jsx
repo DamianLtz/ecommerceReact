@@ -1,16 +1,21 @@
 import React from "react";
 
-import Header from "../components/home/Header";
+import Navbar from "../components/home/Navbar";
 import Footer from "../components/home/Footer";
 
 const Carrito = () => {
   return (
     <>
-      <Header />
+      <header>
+        <Navbar />
+      </header>
       <main className="main-principal">
         <section className="container-lg">
           <h1 className="pt-5 fs-3">Tu carrito</h1>
-          <div className="container-shopcart mt-5 p-lg-5 p-sm-4 p-3 g-3" id="carritoDeCompras">
+          <div
+            className="container-shopcart mt-5 p-lg-5 p-sm-4 p-3 g-3"
+            id="carritoDeCompras"
+          >
             <div className="row align-items-center justify-content-center">
               <div
                 className="row align-items-center justify-content-center my-3 my-lg-2 py-lg-4 py-3 box-item-carrito"
@@ -118,7 +123,7 @@ const Carrito = () => {
           </div>
         </section>
       </main>
-      <Footer visible="d-none" />
+      <Footer />
     </>
   );
 };

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import Header from "../components/home/Header";
+import Navbar from "../components/home/Navbar";
 import Footer from "../components/home/Footer";
+import Loader from "../components/common/Loader";
 
 import coin from "../img/main/coin.png";
 
@@ -25,7 +26,9 @@ const DescripcionProducto = () => {
 
   return productos.length !== 0 ? (
     <>
-      <Header />
+      <header>
+        <Navbar />
+      </header>
       <main className="main-principal">
         <section className="container-fluid bg-principal">
           <div className="row p-5">
@@ -133,23 +136,7 @@ const DescripcionProducto = () => {
       <Footer />
     </>
   ) : (
-    <main className="main-principal">
-      <div className="showbox">
-        <div className="loader">
-          <svg className="circular" viewBox="25 25 50 50">
-            <circle
-              className="path"
-              cx="50"
-              cy="50"
-              r="20"
-              fill="none"
-              strokeWidth="2"
-              strokeMiterlimit="10"
-            />
-          </svg>
-        </div>
-      </div>
-    </main>
+    <Loader />
   );
 };
 

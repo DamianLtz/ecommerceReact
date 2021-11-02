@@ -1,14 +1,33 @@
 import React from "react";
 
-import Header from "./Header";
-import Main from "./Main";
+import BotonesCategorias from "./BotonesCategorias";
+import CatalogoProductos from "./CatalogoProductos";
+import CardsCategorias from "./CardsCategorias";
+import SeccionEnvios from "./SeccionEnvios";
+/* import Carousel from "./Carousel"; */
+import CarouselAlt from "./CarouselAlt";
+
+import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 const Home = () => {
   return (
     <>
-      <Header />
-      <Main />
+      <header>
+        <Navbar />
+      </header>
+      <main className="main-principal" id="main-app">
+        {/* <Carousel /> */}
+        <CarouselAlt />
+        {/* Botones Categorias */}
+        <BotonesCategorias />
+        {/* Sección de productos */}
+        <CatalogoProductos />
+        {/* Cards Electro y Electrobelleza */}
+        <CardsCategorias />
+        {/* Seccion Envíos */}
+        <SeccionEnvios />
+      </main>
       <Footer />
     </>
   );

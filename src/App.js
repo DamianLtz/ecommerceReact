@@ -1,3 +1,5 @@
+import React from "react";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,26 +15,28 @@ import DescripcionProducto from "./routes/DescripcionProducto";
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path={`/DescripcionProducto/:id`}>
-          <DescripcionProducto />
-        </Route>
-        <Route exact path="/inicioSesion">
-          <IniciarSesion />
-        </Route>
-        <Route exact path="/registroUsuario">
-          <RegistroUsuario />
-        </Route>
-        <Route exact path="/Carrito">
-          <Carrito />
-        </Route>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Redirect to="/" />
-      </Switch>
-    </Router>
+    <React.StrictMode>
+      <Router>
+        <Switch>
+          <Route exact path={`/DescripcionProducto/:id`}>
+            <DescripcionProducto />
+          </Route>
+          <Route exact path="/inicioSesion">
+            <IniciarSesion />
+          </Route>
+          <Route exact path="/registroUsuario">
+            <RegistroUsuario />
+          </Route>
+          <Route exact path="/Carrito">
+            <Carrito />
+          </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Redirect to="/" />
+        </Switch>
+      </Router>
+    </React.StrictMode>
   );
 }
 

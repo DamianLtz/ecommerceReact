@@ -1,6 +1,6 @@
 import React from "react";
 
-const Footer = ({visible}) => {
+const Footer = () => {
   return (
     <footer>
       <div className="container-lg mt-5 py-5">
@@ -8,7 +8,7 @@ const Footer = ({visible}) => {
           <div className="col-lg-4 footer-options py-3 py-lg-0">
             <h4>Mi Cuenta</h4>
             <ul id="footer-options">
-              <li className={visible}>
+              <li>
                 <a href="registro-cuenta.html">Crear Cuenta</a>
               </li>
               <li>
