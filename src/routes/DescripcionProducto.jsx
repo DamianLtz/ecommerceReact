@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import Navbar from "../components/home/Navbar";
 import Footer from "../components/home/Footer";
 import Loader from "../components/common/Loader";
+import Contador from "../components/common/Contador";
 
 import coin from "../img/main/coin.png";
 
@@ -81,44 +82,7 @@ const DescripcionProducto = () => {
             <div className="col-lg-5 col-md-5 ms-0 ms-md-5 d-flex flex-column justify-content-center">
               <h1 className="pt-4 pt-lg-0 pb-3 pb-lg-2">{producto.title}</h1>
               <p className="description-truncate">{producto.longDescription}</p>
-              <div className="container-buttons mt-3 justify-content-center justify-content-md-start">
-                <button
-                  className="border border-primary p-0 bg-primary rounded-circle"
-                  id={"idProducto-minus"}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    fill="#fff"
-                    className="bi bi-dash"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
-                  </svg>
-                </button>
-                <p
-                  className="mx-2 px-2 py-1 border-cantidad"
-                  id={"idProducto-cantidad"}
-                >
-                  {"1"}
-                </p>
-                <button
-                  className="border border-primary p-0 bg-primary rounded-circle"
-                  id={"idProducto-add"}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    fill="#fff"
-                    className="bi bi-plus"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                  </svg>
-                </button>
-              </div>
+              <Contador />
               <div className="d-flex align-items-center justify-content-center justify-content-md-start my-3">
                 <p>Comprar por:</p>
                 <img src={coin} alt="" className="coin mx-2" />
