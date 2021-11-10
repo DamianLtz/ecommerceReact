@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
-import twitter from "../../img/main/log-in/twitter-icon.svg";
-import github from "../../img/main/log-in/github-icon.svg";
+import twitter from "../img/main/log-in/twitter-icon.svg";
+import github from "../img/main/log-in/github-icon.svg";
 
 const IniciarSesion = () => {
   const [inicioExitoso, cambiarInicioExistoso] = useState(false);

@@ -1,14 +1,14 @@
 import React from "react";
 
-import BotonesCategorias from "./BotonesCategorias";
-import CatalogoProductos from "./CatalogoProductos";
-import CardsCategorias from "./CardsCategorias";
-import SeccionEnvios from "./SeccionEnvios";
+import BotonesCategorias from "../components/home/BotonesCategorias";
+import CatalogoProductos from "../components/home/CatalogoProductos";
+import CardsCategorias from "../components/home/CardsCategorias";
+import SeccionEnvios from "../components/home/SeccionEnvios";
 /* import Carousel from "./Carousel"; */
-import CarouselAlt from "./CarouselAlt";
+import CarouselAlt from "../components/home/CarouselAlt";
 
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Navbar from "../components/home/Navbar";
+import Footer from "../components/home/Footer";
 
 const Home = () => {
   return (

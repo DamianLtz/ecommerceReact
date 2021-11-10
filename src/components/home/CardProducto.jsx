@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import coin from "../../img/main/coin.png"
 
-const MainCardProducto = ({image, oldPrice , title, description, price , id}) => {
+const CardProducto = ({image, oldPrice , title, description, price , id}) => {
   return (
     <div className="col-xl-3 col-lg-4 col-md-6 gy-4">
       <div className="card position-static text-dark">
@@ -38,4 +38,4 @@ const MainCardProducto = ({image, oldPrice , title, description, price , id}) =>
   );
 };
 
-export default MainCardProducto;
+export default CardProducto;

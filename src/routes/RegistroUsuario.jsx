@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
-import twitter from "../../img/main/log-in/twitter-icon.svg";
-import github from "../../img/main/log-in/github-icon.svg";
+import twitter from "../img/main/log-in/twitter-icon.svg";
+import github from "../img/main/log-in/github-icon.svg";
 
 const RegistroUsuario = () => {
   const [registroExitoso, cambiarRegistroExistoso] = useState(false);

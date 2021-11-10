@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import Productos from "./CardProducto";
-import Loader from "../common/Loader"
+import Loader from "../common/Loader";
 
 const CatalogoProductos = () => {
   const [productos, setProductos] = useState([]);

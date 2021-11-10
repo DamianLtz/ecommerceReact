@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 
-const Contador = () => {
+const Contador = ({ min, stock }) => {
   const [contador, setContador] = useState(1);
-
   return (
     <div className="container-buttons mt-3 justify-content-center justify-content-md-start">
       <button
         className="border border-primary p-0 bg-primary rounded-circle"
         id="minusQuantity"
-        onClick={() => setContador(contador > 1 ? contador - 1 : contador)}>
+        onClick={() => setContador(contador > min ? contador - 1 : contador)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="32"
@@ -26,7 +25,7 @@ const Contador = () => {
       <button
         className="border border-primary p-0 bg-primary rounded-circle"
         id="addQuantity"
-        onClick={() => setContador(contador < 20 ? contador + 1 : contador)}>
+        onClick={() => setContador(contador < stock ? contador + 1 : contador)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="32"

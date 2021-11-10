@@ -82,7 +82,7 @@ const DescripcionProducto = () => {
             <div className="col-lg-5 col-md-5 ms-0 ms-md-5 d-flex flex-column justify-content-center">
               <h1 className="pt-4 pt-lg-0 pb-3 pb-lg-2">{producto.title}</h1>
               <p className="description-truncate">{producto.longDescription}</p>
-              <Contador />
+              <Contador min={1} stock={20}/>
               <div className="d-flex align-items-center justify-content-center justify-content-md-start my-3">
                 <p>Comprar por:</p>
                 <img src={coin} alt="" className="coin mx-2" />

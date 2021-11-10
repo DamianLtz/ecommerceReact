@@ -5,7 +5,7 @@ const Footer = () => {
     <footer>
       <div className="container-lg mt-5 py-5">
         <div className="row">
-          <div className="col-lg-4 footer-options py-3 py-lg-0">
+          <div className="col-lg-4 col-md-6 col-sm-6 footer-options py-3 py-lg-0">
             <h4>Mi Cuenta</h4>
             <ul id="footer-options">
               <li>
@@ -19,7 +19,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-lg-4 footer-options py-3 py-lg-0">
+          <div className="col-lg-4 col-md-6 col-sm-6 footer-options py-3 py-lg-0">
             <h4>Ayuda</h4>
             <ul>
               <li>
@@ -30,7 +30,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-lg-4 footer-options py-3 py-lg-0">
+          <div className="col-lg-4 col-md-12 col-sm-12 footer-options py-3 py-lg-0">
             <h4>Información de la tienda</h4>
             <ul>
               <li>
@@ -43,7 +43,7 @@ const Footer = () => {
           </div>
         </div>
         <h6 className="text-center text-muted pt-5">
-          Proyecto CoderHouse: E-Commerce - Damian
+          Proyecto CoderHouse: E-Commerce con React - Damian
         </h6>
       </div>
     </footer>
