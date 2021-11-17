@@ -1,20 +1,26 @@
 import React, { useState, useEffect } from "react";
-
+import axios from "axios";
 import Productos from "./CardProducto";
 import Loader from "../common/Loader";
 
 const CatalogoProductos = () => {
   const [productos, setProductos] = useState([]);
-  const obtenerDatosJSON = async () => {
-    const data = await fetch(
-      "https://api.jsonbin.io/b/616cadd44a82881d6c619462/8"
-    );
-    const listaProductos = await data.json();
-    const productos = listaProductos.listaProductos;
-    setProductos(productos);
-  };
+  // const obtenerDatosJSON = async () => {
+  //   const data = await fetch(
+  //     "https://api.jsonbin.io/b/616cadd44a82881d6c619462/8"
+  //   );
+  //   const listaProductos = await data.json();
+  //   const productos = listaProductos.listaProductos;
+  //   setProductos(productos);
+  // };
+  // useEffect(() => {
+  //   obtenerDatosJSON();
+  // }, []);
+  /* ------------------------------------------------------------------------------------------ */
   useEffect(() => {
-    obtenerDatosJSON();
+    axios
+      .get("https://api.jsonbin.io/b/616cadd44a82881d6c619462/8")
+      .then((response) => setProductos(response.data.listaProductos));
   }, []);
   return productos.length !== 0 ? (
     <section className="container-lg mt-5">

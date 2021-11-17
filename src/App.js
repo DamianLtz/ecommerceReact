@@ -1,14 +1,12 @@
 import React from "react";
-import Routes from "./routes/routes";
+import Routes from "./views/routes";
 
 function App() {
   return (
     <React.StrictMode>
-      <Routes></Routes>
+      <Routes />
     </React.StrictMode>
   );
 }
 
 export default App;
-
-/* /:id */
