@@ -43,7 +43,7 @@ const Header = () => {
             </li>
           </ul>
           <div className="cuenta--container" id="datos-cliente-container">
-            <NavLink to="/carrito">
+            <NavLink to="carrito">
               <CartWidget />
             </NavLink>
             <div
@@ -54,7 +54,7 @@ const Header = () => {
               <p id="monto"></p>
             </div>
             <NavLink
-              to="/inicioSesion"
+              to="inicioSesion"
               id="usuario-actual"
               className="fw-bold log-in"
             >
