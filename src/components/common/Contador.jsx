@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Contador = ({ min, stock }) => {
-  const [contador, setContador] = useState(1);
+  const [contador, setContador] = useState(min);
   return (
     <div className="container-buttons mt-3 justify-content-center justify-content-md-start">
       <button

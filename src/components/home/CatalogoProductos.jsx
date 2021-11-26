@@ -5,6 +5,7 @@ import Loader from "../common/Loader";
 
 const CatalogoProductos = () => {
   const [productos, setProductos] = useState([]);
+    /* --------------------------------- Version Anterior para traer datos del JSON--------------------------------------------------------- */
   // const obtenerDatosJSON = async () => {
   //   const data = await fetch(
   //     "https://api.jsonbin.io/b/616cadd44a82881d6c619462/8"
@@ -16,13 +17,14 @@ const CatalogoProductos = () => {
   // useEffect(() => {
   //   obtenerDatosJSON();
   // }, []);
-  /* ------------------------------------------------------------------------------------------ */
+  /* ------------------------------- Version Nueva para traer datos del JSON ----------------------------------------------------------- */
   useEffect(() => {
     axios
       .get("https://api.jsonbin.io/b/616cadd44a82881d6c619462/8")
       .then((response) => setProductos(response.data.listaProductos));
   }, []);
-  return productos.length !== 0 ? (
+  /* ------------------------------------------------------------------------------------------ */
+  return productos.length ? (
     <section className="container-lg mt-5">
       <div
         className="d-flex align-items-center justify-content-lg-start justify-content-center px-lg-4 px-4 pb-4"
