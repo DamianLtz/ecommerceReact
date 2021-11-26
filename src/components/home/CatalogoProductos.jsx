@@ -5,18 +5,7 @@ import Loader from "../common/Loader";
 
 const CatalogoProductos = () => {
   const [productos, setProductos] = useState([]);
-    /* --------------------------------- Version Anterior para traer datos del JSON--------------------------------------------------------- */
-  // const obtenerDatosJSON = async () => {
-  //   const data = await fetch(
-  //     "https://api.jsonbin.io/b/616cadd44a82881d6c619462/8"
-  //   );
-  //   const listaProductos = await data.json();
-  //   const productos = listaProductos.listaProductos;
-  //   setProductos(productos);
-  // };
-  // useEffect(() => {
-  //   obtenerDatosJSON();
-  // }, []);
+  
   /* ------------------------------- Version Nueva para traer datos del JSON ----------------------------------------------------------- */
   useEffect(() => {
     axios
