@@ -8,7 +8,7 @@ const CardProducto = ({image, oldPrice , title, description, price , id}) => {
   return (
     <div className="col-xl-3 col-lg-4 col-md-6 gy-4">
       <div className="card position-static text-dark">
-        <Link className="bg-img-container" to={`DescripcionProducto/${id}`} id={id}>
+        <Link className="bg-img-container" to={`/DescripcionProducto/${id}`} id={id}>
           <img
             src={image}
             alt=""
