@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import Home from "./Home";
 import IniciarSesion from "./IniciarSesion";
@@ -19,6 +19,7 @@ const routes = () => {
         <Route path="inicioSesion" element={<IniciarSesion />} />
         <Route path="registroUsuario" element={<RegistroUsuario />} />
         <Route path="Carrito" element={<Carrito />} />
+        <Route path="*" element={<Navigate replace to="/" />}/>
       </Routes>
     </>
   );
