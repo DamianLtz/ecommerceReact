@@ -15,7 +15,7 @@ const routes = () => {
       <Route index path="/ecommerceReact" element={<Home />} />
       <Route path={`/DescripcionProducto/:id`} element={<DescripcionProducto />}/>
       <Route path={`/Categoria/:id`} element={<Categorias />}/>
-      <Route path="/inicioSesion" element={<IniciarSesion />} />
+      <Route path="inicioSesion" element={<IniciarSesion />} />
       <Route path="/registroUsuario" element={<RegistroUsuario />} />
       <Route path="/Carrito" element={<Carrito />} />
     </Routes>
