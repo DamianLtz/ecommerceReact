@@ -44,7 +44,7 @@ const Header = () => {
           </ul>
           <div className="cuenta--container" id="datos-cliente-container">
             <NavLink to="/carrito">
-              <CartWidget quantity="2" />
+              <CartWidget />
             </NavLink>
             <div
               className="d-none align-items-center ms-3"

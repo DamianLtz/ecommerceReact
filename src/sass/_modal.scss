@@ -1,0 +1,18 @@
+.btn-agregar-carrito {
+  .modal-cart {
+    padding: 1rem 1.5rem;
+    border-radius: 12px 0px 0px 12px;
+    top: 75px;
+    right: 0px;
+    transform: translateX(275px);
+    overflow: hidden;
+    transition: transform 0.35s ease;
+  }
+  .modal-cart-visible {
+    transform: translateX(0);
+  }
+}
+
+.btn-disabled{
+  pointer-events: none;
+}

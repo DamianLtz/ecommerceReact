@@ -1,31 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 
 import Navbar from "../components/home/Navbar";
 import Footer from "../components/home/Footer";
 import Loader from "../components/common/Loader";
 import Contador from "../components/common/Contador";
+import Modal from "../components/common/ModalAlt";
 
 import coin from "../img/main/coin.png";
 
 const DescripcionProducto = () => {
   const { id } = useParams();
   const [productos, setProductos] = useState([]);
-  const obtenerDatosJSON = async () => {
-    const data = await fetch(
-      "https://api.jsonbin.io/b/616cadd44a82881d6c619462/8"
-    );
-    const listaProductos = await data.json();
-    const productos = listaProductos.listaProductos;
-    setProductos(productos);
-  };
+
   useEffect(() => {
-    obtenerDatosJSON();
+    axios
+      .get("https://api.jsonbin.io/b/616cadd44a82881d6c619462/8")
+      .then((response) => setProductos(response.data.listaProductos));
   }, []);
 
   const producto = productos[id];
 
-  return productos.length !== 0 ? (
+  return productos.length ? (
     <>
       <header>
         <Navbar />
@@ -82,16 +79,14 @@ const DescripcionProducto = () => {
             <div className="col-lg-5 col-md-5 ms-0 ms-md-5 d-flex flex-column justify-content-center">
               <h1 className="pt-4 pt-lg-0 pb-3 pb-lg-2">{producto.title}</h1>
               <p className="description-truncate">{producto.longDescription}</p>
-              <Contador min={1} stock={20}/>
+              <Contador min={1} stock={20} />
               <div className="d-flex align-items-center justify-content-center justify-content-md-start my-3">
                 <p>Comprar por:</p>
                 <img src={coin} alt="" className="coin mx-2" />
                 <p>{producto.price}</p>
               </div>
               <div className="d-flex justify-content-center justify-content-md-start mb-3">
-                <button className="d-block btn btn-primary fs-5">
-                  Agregar al carrito
-                </button>
+                <Modal />
               </div>
             </div>
           </div>

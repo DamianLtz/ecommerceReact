@@ -16,7 +16,7 @@ const Home = () => {
       <header>
         <Navbar />
       </header>
-      <main className="main-principal" id="main-app">
+      <main className="main-principal">
         {/* <Carousel /> */}
         <CarouselAlt />
         {/* Botones Categorias */}
