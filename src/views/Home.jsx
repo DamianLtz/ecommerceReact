@@ -27,6 +27,7 @@ const Home = () => {
         <Routes>
           <Route path="/" element={<CatalogoProductos />} />
           <Route path="/:name" element={<CatalogoProductos />} />
+          <Route path="*" element={<CatalogoProductos />} />
         </Routes>
         {/* Cards Electro y Electrobelleza */}
         <CardsCategorias />

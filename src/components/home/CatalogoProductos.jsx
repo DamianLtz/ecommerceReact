@@ -59,14 +59,14 @@ const CatalogoProductos = () => {
         id="titulo-container"
       >
         <h2 className="text-nowrap">
-          {name === "Todos" || !name ? "Catalogo de Productos" : name}
+          {name === "Todos" || name || "ecommerceReact" ? "Catalogo de Productos" : name}
         </h2>
       </div>
       <div
         className="row justify-content-lg-start justify-content-md-center cards-container"
         id="seccionProductos"
       >
-        {!name || name === "Todos"
+        {!name || name === "Todos" || name === "ecommerceReact"
           ? catalogoTotalProductos(productos)
           : filtrarPorCategoria(productos)}
       </div>
