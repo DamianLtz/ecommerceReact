@@ -51,7 +51,6 @@ const CatalogoProductos = () => {
       );
     });
   };
-
   return productos.length ? (
     <section className="container-lg mt-5">
       <div
@@ -59,7 +58,7 @@ const CatalogoProductos = () => {
         id="titulo-container"
       >
         <h2 className="text-nowrap">
-          {name === "Todos" || name || "ecommerceReact" ? "Catalogo de Productos" : name}
+          {name === "Todos" || name === "ecommerceReact" || !name ? "Catalogo de Productos" : name}
         </h2>
       </div>
       <div

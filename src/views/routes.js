@@ -16,12 +16,12 @@ const routes = () => {
         <Route path="/" element={<Home />}>
           <Route index element={<Home />} />
           <Route path=":name" element={<CatalogoProductos />} />
-          <Route path={`/DescripcionProducto/:id`} element={<DescripcionProducto />} />
         </Route>
+        <Route path={`/DescripcionProducto/:id`} element={<DescripcionProducto />} />
         <Route path="/inicioSesion" element={<IniciarSesion />} />
         <Route path="/registroUsuario" element={<RegistroUsuario />} />
         <Route path="/Carrito" element={<Carrito />} />
-        <Route path="/*" element={<Navigate replace to="/" />} />
+        {/* <Route path="*" element={<Navigate replace to="/" />} />  */} {/* No Funciona. */}
       </Routes>
     </>
   );
