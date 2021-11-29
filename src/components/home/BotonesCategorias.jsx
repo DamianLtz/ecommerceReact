@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import ButtonCategoria from "../common/BotonCategoria";
+import JSON from "../common/ListaProductos"
 
 const BotonesCategorias = () => {
   const [categorias, setCategorias] = useState([]);
   useEffect(() => {
     axios
-      .get("https://api.jsonbin.io/b/616cadd44a82881d6c619462/8")
+      .get(JSON)
       .then((response) => setCategorias(response.data.listaCategorias));
   }, []);
 

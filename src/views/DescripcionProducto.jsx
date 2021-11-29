@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
@@ -6,9 +6,11 @@ import Navbar from "../components/home/Navbar";
 import Footer from "../components/home/Footer";
 import Loader from "../components/common/Loader";
 import Contador from "../components/common/Contador";
-import Modal from "../components/common/ModalAlt";
-
+import ButtonAddCart from "../components/common/ButtonAddToCart";
 import coin from "../img/main/coin.png";
+
+export const ContadorContext = createContext();
+
 
 const DescripcionProducto = () => {
   const { id } = useParams();
@@ -86,7 +88,7 @@ const DescripcionProducto = () => {
                 <p>{producto.price}</p>
               </div>
               <div className="d-flex justify-content-center justify-content-md-start mb-3">
-                <Modal />
+                <ButtonAddCart />
               </div>
             </div>
           </div>

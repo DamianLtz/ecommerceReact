@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 
 import CartWidget from "../common/CartWidget";
 
+
 import logo from "../../img/header/logo.svg";
 import search from "../../img/header/search.svg";
 import coin from "../../img/main/coin.png";
@@ -43,7 +44,7 @@ const Header = () => {
             </li>
           </ul>
           <div className="cuenta--container" id="datos-cliente-container">
-            <NavLink to="carrito">
+            <NavLink to="/Carrito">
               <CartWidget />
             </NavLink>
             <div

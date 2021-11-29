@@ -20,23 +20,18 @@ const ModalAlt = () => {
     );
   };
 
-  const disableButton = () => {
-    setTimeout(() => {
-      setDisabledButton("");
-    }, 1500);
-    return "btn-disabled disabled"
-  };
+  // const disableButton = () => {
+  //   setTimeout(() => {
+  //     setDisabledButton("");
+  //   }, 1500);
+  //   return "algo"
+  // };
 
   const [modal, setModal] = useState(modalHidden());
-  const [disabledButton, setDisabledButton] = useState("");
 
   return (
     <div className="btn-agregar-carrito" onClick={() => setModal(modalShow())}>
-      <button
-        className={`d-block btn btn-primary fs-5 ${disabledButton}`}
-        onClick={() => setDisabledButton(disableButton())}
-        //   onClick={() => setAddToCart(addToCart + 1)}
-      >
+      <button className={`d-block btn btn-primary fs-5`}>
         Agregar al carrito
       </button>
       {modal}

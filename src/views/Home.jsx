@@ -9,6 +9,8 @@ import CarouselAlt from "../components/home/CarouselAlt";
 
 import Navbar from "../components/home/Navbar";
 import Footer from "../components/home/Footer";
+//eslint-disable-next-line
+import { Route, Routes, Navigate } from "react-router";
 
 const Home = () => {
   return (
@@ -22,7 +24,10 @@ const Home = () => {
         {/* Botones Categorias */}
         <BotonesCategorias />
         {/* Sección de productos */}
-        <CatalogoProductos />
+        <Routes>
+          <Route path="/" element={<CatalogoProductos />} />
+          <Route path="/:name" element={<CatalogoProductos />} />
+        </Routes>
         {/* Cards Electro y Electrobelleza */}
         <CardsCategorias />
         {/* Seccion Envíos */}

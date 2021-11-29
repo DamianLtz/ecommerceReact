@@ -1,14 +1,13 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const BotonCategoria = ({ categoria }) => {
   return (
     <>
-      <Link
-        to={`categoria/${categoria.id}`}
+      <NavLink
+        to={`/${categoria.name}`}
         href="#"
         className="btn shadow-none btn-drop-shadow p-0 col-lg-2 col-md-3 col-sm-4 col-xs-6 gy-4 gy-lg-0"
-        id={categoria.id}
       >
         <div className="btn-categoria-container">
           <div className="btn-categoria">
@@ -17,8 +16,7 @@ const BotonCategoria = ({ categoria }) => {
           </div>
         </div>
         <p className="d-sm-none d-block mb-4 mt-1 fw-bold">{categoria.name}</p>
-      </Link>
-      <Outlet />
+      </NavLink>
     </>
   );
 };

@@ -1,20 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ContadorCartContext } from "../../App";
 
 import shoppingCart from "../../img/header/shopping-cart.svg";
 
 const CartWidget = () => {
-  let quantity = 1;
+  const { contadorCart } = useContext(ContadorCartContext);
   const contadorProductos = () => {
     return (
       <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
-        {quantity}
+        {contadorCart}
       </span>
     );
   };
   return (
     <button className="position-relative shop-cart-container bg-transparent border-0">
       <img src={shoppingCart} alt="" className="shop-cart" />
-      {quantity > 0 ? contadorProductos() : null}
+      {contadorCart >= 0 ? contadorProductos() : null}
     </button>
   );
 };
