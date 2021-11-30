@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { ContadorUnidades } from "../../contexts/ContadorUnidades";
 
-const Contador = ({ min, stock }) => {
-  const [contador, setContador] = useState(min);
+const Contador = ({ stock }) => {
+  const { contador, setContador } = useContext(ContadorUnidades);
   return (
     <div className="container-buttons mt-3 justify-content-center justify-content-md-start">
       <button
         className="border border-primary p-0 bg-primary rounded-circle"
-        id="minusQuantity"
-        onClick={() => setContador(contador > min ? contador - 1 : contador)}>
+        onClick={() => {
+          setContador(contador > 1 ? contador - 1 : contador);
+        }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="32"
@@ -19,13 +22,18 @@ const Contador = ({ min, stock }) => {
           <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
         </svg>
       </button>
-      <p className="mx-2 px-2 py-1 border-cantidad border-cantidad" id="contador">
+      <p
+        className="mx-2 px-2 py-1 border-cantidad border-cantidad"
+        id="contador"
+      >
         {contador}
       </p>
       <button
         className="border border-primary p-0 bg-primary rounded-circle"
-        id="addQuantity"
-        onClick={() => setContador(contador < stock ? contador + 1 : contador)}>
+        onClick={() => {
+          setContador(contador < stock ? contador + 1 : contador);
+        }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="32"

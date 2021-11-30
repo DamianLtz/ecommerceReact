@@ -14,7 +14,6 @@ const routes = () => {
     <>
       <Routes>
         <Route path="/" element={<Home />}>
-          <Route index element={<Home />} />
           <Route path=":name" element={<CatalogoProductos />} />
         </Route>
         <Route path={`/DescripcionProducto/:id`} element={<DescripcionProducto />} />

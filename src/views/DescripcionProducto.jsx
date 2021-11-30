@@ -1,16 +1,13 @@
-import React, { useState, useEffect, createContext } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
 import Navbar from "../components/home/Navbar";
 import Footer from "../components/home/Footer";
 import Loader from "../components/common/Loader";
-import Contador from "../components/common/Contador";
-import ButtonAddCart from "../components/common/ButtonAddToCart";
+import Contador from "../components/common/ContadorItems";
+import AddToCart from "../components/common/AddToCart"
 import coin from "../img/main/coin.png";
-
-export const ContadorContext = createContext();
-
 
 const DescripcionProducto = () => {
   const { id } = useParams();
@@ -81,14 +78,14 @@ const DescripcionProducto = () => {
             <div className="col-lg-5 col-md-5 ms-0 ms-md-5 d-flex flex-column justify-content-center">
               <h1 className="pt-4 pt-lg-0 pb-3 pb-lg-2">{producto.title}</h1>
               <p className="description-truncate">{producto.longDescription}</p>
-              <Contador min={1} stock={20} />
+              <Contador stock={20} />
               <div className="d-flex align-items-center justify-content-center justify-content-md-start my-3">
                 <p>Comprar por:</p>
                 <img src={coin} alt="" className="coin mx-2" />
                 <p>{producto.price}</p>
               </div>
               <div className="d-flex justify-content-center justify-content-md-start mb-3">
-                <ButtonAddCart />
+                <AddToCart />
               </div>
             </div>
           </div>

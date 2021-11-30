@@ -1,20 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
 import Productos from "./CardProducto";
 import Loader from "../common/Loader";
 import JSON from "../common/ListaProductos";
+import { listaProductosContext } from "../../contexts/listaProductos";
 
 const CatalogoProductos = () => {
   const { name } = useParams();
-  const [productos, setProductos] = useState([]);
+  const { productos, setProductos } = useContext(listaProductosContext);
 
   /* ------------------------------- Version Nueva para traer datos del JSON ----------------------------------------------------------- */
   useEffect(() => {
     axios
       .get(JSON)
       .then((response) => setProductos(response.data.listaProductos));
-  }, []);
+  }, [setProductos]);
   /* ------------------------------------------------------------------------------------------ */
 
   const filtrarPorCategoria = (productos) => {
@@ -58,7 +59,9 @@ const CatalogoProductos = () => {
         id="titulo-container"
       >
         <h2 className="text-nowrap">
-          {name === "Todos" || name === "ecommerceReact" || !name ? "Catalogo de Productos" : name}
+          {name === "Todos" || name === "ecommerceReact" || !name
+            ? "Catalogo de Productos"
+            : name}
         </h2>
       </div>
       <div

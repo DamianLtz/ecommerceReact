@@ -50,7 +50,6 @@ const RegistroUsuario = () => {
         onSubmit={(valores, { resetForm }) => {
           resetForm();
           cambiarRegistroExistoso(true);
-          console.log(valores);
           setTimeout(() => (window.location.href = "index.html"), 450);
         }}
       >

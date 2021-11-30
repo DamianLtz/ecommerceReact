@@ -10,7 +10,7 @@ import CarouselAlt from "../components/home/CarouselAlt";
 import Navbar from "../components/home/Navbar";
 import Footer from "../components/home/Footer";
 //eslint-disable-next-line
-import { Route, Routes, Navigate } from "react-router";
+import { Route, Routes } from "react-router";
 
 const Home = () => {
   return (

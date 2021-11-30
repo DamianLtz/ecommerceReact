@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import {ContadorUnidades} from "../../contexts/ContadorUnidades"
 
 const ModalAlt = () => {
+  const {contador, setContador} = useContext(ContadorUnidades)
   const modalHidden = () => {
     return (
       <div className="position-fixed modal-cart bg-primary">
@@ -20,18 +22,11 @@ const ModalAlt = () => {
     );
   };
 
-  // const disableButton = () => {
-  //   setTimeout(() => {
-  //     setDisabledButton("");
-  //   }, 1500);
-  //   return "algo"
-  // };
-
   const [modal, setModal] = useState(modalHidden());
 
   return (
     <div className="btn-agregar-carrito" onClick={() => setModal(modalShow())}>
-      <button className={`d-block btn btn-primary fs-5`}>
+      <button className={`d-block btn btn-primary fs-5`} onClick={""}>
         Agregar al carrito
       </button>
       {modal}

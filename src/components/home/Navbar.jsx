@@ -55,7 +55,7 @@ const Header = () => {
               <p id="monto"></p>
             </div>
             <NavLink
-              to="inicioSesion"
+              to="/inicioSesion"
               id="usuario-actual"
               className="fw-bold log-in"
             >

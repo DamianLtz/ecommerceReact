@@ -1,19 +1,27 @@
-import React, { createContext, useState } from "react";
+import React, { useState } from "react";
 import Routes from "./views/routes";
-
-export const ContadorCartContext = createContext();
-export const ContadorProductosContext = createContext();
+import { CartContext } from "./contexts/CartContext";
+import { ContadorUnidades } from "./contexts/ContadorUnidades";
+import { UserContext } from "./contexts/UserContext.jsx";
+import { listaProductosContext } from "./contexts/listaProductos.jsx";
 
 function App() {
-  const [contadorCart, setContadorCart] = useState(0);
-  const [ContadorProductos, setContadorProductos] = useState(1)
+  const [cart, setCart] = useState([]);
+  const [contador, setContador] = useState(1);
+  const [user, setUser] = useState([]);
+  const [productos, setProductos] = useState([]);
+  //  37:40
   return (
     <React.StrictMode>
-      <ContadorCartContext.Provider value={{ contadorCart, setContadorCart }}>
-        <ContadorProductosContext.Provider value={{ContadorProductos, setContadorProductos}}>
-          <Routes />
-        </ContadorProductosContext.Provider>
-      </ContadorCartContext.Provider>
+      <listaProductosContext.Provider value={{ productos, setProductos }}>
+        <UserContext.Provider value={{ user, setUser }}>
+          <CartContext.Provider value={{ cart, setCart }}>
+            <ContadorUnidades.Provider value={{ contador, setContador }}>
+              <Routes />
+            </ContadorUnidades.Provider>
+          </CartContext.Provider>
+        </UserContext.Provider>
+      </listaProductosContext.Provider>
     </React.StrictMode>
   );
 }
