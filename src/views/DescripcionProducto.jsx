@@ -1,23 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { /* useState, useEffect, */ useContext } from "react";
 import { Link, useParams } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 
 import Navbar from "../components/home/Navbar";
 import Footer from "../components/home/Footer";
 import Loader from "../components/common/Loader";
-import Contador from "../components/common/ContadorItems";
-import AddToCart from "../components/common/AddToCart"
-import coin from "../img/main/coin.png";
+
+import BuyItem from "../components/common/BuyItem";
+
+import { ProductosContext } from "../contexts/ListaProductos";
 
 const DescripcionProducto = () => {
   const { id } = useParams();
-  const [productos, setProductos] = useState([]);
+  // const [productos, setProductos] = useState([]);
+  const { productos } = useContext(ProductosContext);
 
-  useEffect(() => {
-    axios
-      .get("https://api.jsonbin.io/b/616cadd44a82881d6c619462/8")
-      .then((response) => setProductos(response.data.listaProductos));
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("https://api.jsonbin.io/b/616cadd44a82881d6c619462/8")
+  //     .then((response) => setProductos(response.data.listaProductos));
+  // }, []);
 
   const producto = productos[id];
 
@@ -78,15 +80,7 @@ const DescripcionProducto = () => {
             <div className="col-lg-5 col-md-5 ms-0 ms-md-5 d-flex flex-column justify-content-center">
               <h1 className="pt-4 pt-lg-0 pb-3 pb-lg-2">{producto.title}</h1>
               <p className="description-truncate">{producto.longDescription}</p>
-              <Contador stock={20} />
-              <div className="d-flex align-items-center justify-content-center justify-content-md-start my-3">
-                <p>Comprar por:</p>
-                <img src={coin} alt="" className="coin mx-2" />
-                <p>{producto.price}</p>
-              </div>
-              <div className="d-flex justify-content-center justify-content-md-start mb-3">
-                <AddToCart />
-              </div>
+              <BuyItem producto={producto}/>
             </div>
           </div>
         </section>

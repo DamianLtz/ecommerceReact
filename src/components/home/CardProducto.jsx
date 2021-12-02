@@ -1,14 +1,20 @@
-import React from "react";
-// import PropTypes from 'prop-types';
-import { Link,Outlet } from "react-router-dom";
+import React,{ useState } from "react";
+import { useCartContext } from "../../contexts/CartContext";
+import { Link } from "react-router-dom";
 
-import coin from "../../img/main/coin.png"
+import coin from "../../img/main/coin.png";
 
-const CardProducto = ({image, oldPrice , title, description, price , id}) => {
+const CardProducto = ({ producto, image, oldPrice, title, description, price, id }) => {
+  const { addItem } = useCartContext();
+  const [contador, setContador] = useState(1);
   return (
-    <div className="col-xl-3 col-lg-4 col-md-6 gy-4">
+    <article className="col-xl-3 col-lg-4 col-md-6 gy-4">
       <div className="card position-static text-dark">
-        <Link className="bg-img-container" to={`/DescripcionProducto/${id}`} id={id}>
+        <Link
+          className="bg-img-container"
+          to={`/DescripcionProducto/${id}`}
+          id={id}
+        >
           <img
             src={image}
             alt=""
@@ -24,19 +30,24 @@ const CardProducto = ({image, oldPrice , title, description, price , id}) => {
               {oldPrice} puntos
             </p>
           </div>
-          <h5 className="card-title">{title}</h5>
+          <h5 className="card-title text-truncate">{title}</h5>
           <p className="text-muted text-truncate py-3">{description}</p>
           <div className="d-flex align-items-center card-coins-cost">
             <img src={coin} alt="" className="img-fluid coin" />
             <p className="card-text">{price}</p>
           </div>
-          <button className="btn btn-comprar shadow-none" id={id}>
+          <button
+            className="btn btn-comprar shadow-none"
+            onClick={() => {
+              addItem(producto, contador);
+              setContador(1);
+            }}
+          >
             Agregar al carrito
           </button>
         </div>
       </div>
-      <Outlet />
-    </div>
+    </article>
   );
 };
 

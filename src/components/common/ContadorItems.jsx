@@ -1,8 +1,6 @@
-import React, { useContext } from "react";
-import { ContadorUnidades } from "../../contexts/ContadorUnidades";
+import React from "react";
 
-const Contador = ({ stock }) => {
-  const { contador, setContador } = useContext(ContadorUnidades);
+const Contador = ({ contador, setContador, stock }) => {
   return (
     <div className="container-buttons mt-3 justify-content-center justify-content-md-start">
       <button

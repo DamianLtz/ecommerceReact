@@ -4,12 +4,11 @@ import { useParams } from "react-router";
 import Productos from "./CardProducto";
 import Loader from "../common/Loader";
 import JSON from "../common/ListaProductos";
-import { listaProductosContext } from "../../contexts/listaProductos";
+import { ProductosContext } from "../../contexts/ListaProductos";
 
 const CatalogoProductos = () => {
   const { name } = useParams();
-  const { productos, setProductos } = useContext(listaProductosContext);
-
+  const { productos, setProductos } = useContext(ProductosContext);
   /* ------------------------------- Version Nueva para traer datos del JSON ----------------------------------------------------------- */
   useEffect(() => {
     axios
@@ -25,6 +24,7 @@ const CatalogoProductos = () => {
     return productosFiltrados.map((producto) => {
       return (
         <Productos
+          producto={producto}
           key={producto.id}
           image={producto.image}
           oldPrice={producto.oldPrice}
@@ -41,6 +41,7 @@ const CatalogoProductos = () => {
     return productos.map((producto) => {
       return (
         <Productos
+          producto={producto}
           key={producto.id}
           image={producto.image}
           oldPrice={producto.oldPrice}
