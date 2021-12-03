@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useCartContext } from "../../contexts/CartContext";
 
 import Coin from "../../img/main/coin.png";
@@ -14,9 +14,9 @@ const ItemCarrito = ({
   price,
   id,
   quantity,
+  stock,
 }) => {
   const { addItem, minusItem, removeItem } = useCartContext();
-  const [contador, setContador] = useState(1);
   return (
     <div className="row align-items-center justify-content-center my-3 my-lg-2 py-lg-4 py-3 box-item-carrito">
       <div className="col-lg-2 col-md-2 col-sm-3 d-flex justify-content-center">
@@ -40,8 +40,7 @@ const ItemCarrito = ({
                   <button
                     className="border border-primary p-0 bg-primary rounded-circle"
                     onClick={() => {
-                      minusItem(producto, contador);
-                      setContador(1); 
+                      minusItem(producto, 1);
                     }}
                   >
                     <img src={Minus} alt="restar" />
@@ -50,8 +49,7 @@ const ItemCarrito = ({
                   <button
                     className="border border-primary p-0 bg-primary rounded-circle"
                     onClick={() => {
-                      addItem(producto, contador);
-                      setContador(1);
+                      addItem(producto, 1, stock);
                     }}
                   >
                     <img src={Add} alt="sumar" />

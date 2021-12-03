@@ -1,14 +1,13 @@
-import React, { useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
 import Productos from "./CardProducto";
 import Loader from "../common/Loader";
 import JSON from "../common/ListaProductos";
-import { ProductosContext } from "../../contexts/ListaProductos";
 
 const CatalogoProductos = () => {
   const { name } = useParams();
-  const { productos, setProductos } = useContext(ProductosContext);
+  const [productos, setProductos] = useState([]);
   /* ------------------------------- Version Nueva para traer datos del JSON ----------------------------------------------------------- */
   useEffect(() => {
     axios

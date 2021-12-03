@@ -10,10 +10,11 @@ const CartProvider = ({ children }) => {
   /* Funcion de agregar al carrito, esta funcion va a editar el state del context
 y contendra toda la logica necesaria,por ejemplo buscamos el item y si existe solo le sumamos 
 la cantidad nueva*/
-  const addItem = (producto, cantidad) => {
-    // console.log(cantidad)
+  const addItem = (producto, cantidad, stock) => {
+    if (producto.quantity >= stock) {
+      return false;
+    }
     const product = isInCart(producto.id); // devuelve el elemento seleccionado.
-    console.log(product);
     if (product) {
       /*Si el producto esta en cart, le sumamos la nueva cantidad, si no, solo lo agregamos */
       return setCart([
@@ -21,14 +22,16 @@ la cantidad nueva*/
         { ...product, quantity: product.quantity + cantidad }, // cantidad = contador *Chequear aqui mañana*
       ]);
     }
-    setCart([...cart, producto]);
+    setCart([...cart, { ...producto, quantity: cantidad }]);
   };
 
   // -------------------------------------- //
 
   const minusItem = (producto, cantidad) => {
-    console.log(producto.id, cantidad);
-    let product = isInCart(producto.id); // devuelve el elemento si YA esta en el carrito.
+    let product = isInCart(producto.id);
+    if (product.quantity === 1) {
+      return false;
+    }
     // console.log(product)
     if (product) {
       /*Si el producto esta en cart, le sumamos la nueva cantidad, si no, solo lo agregamos */
@@ -36,10 +39,8 @@ la cantidad nueva*/
         ...removeDuplicateItem(producto.id), // devuelve los elementos distintos al seleccionado
         { ...product, quantity: product.quantity - cantidad }, // cantidad = contador *Chequear aqui mañana*
       ]);
-    } else {
-      setCart([{ ...cart, producto, quantity: product.quantity + cantidad }]);
-      // setCart([...cart, producto]);
     }
+    setCart([...cart, producto]);
   };
 
   /* Funcion exclusiva para el carrito, si estando en el carrito le das a la x 
@@ -74,6 +75,7 @@ eleminiarias ese item del carrito
         removeItem,
         clear,
       }}
+      displayName="Cart"
     >
       {children}
     </CartContext.Provider>

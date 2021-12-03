@@ -20,10 +20,7 @@ const Contador = ({ contador, setContador, stock }) => {
           <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
         </svg>
       </button>
-      <p
-        className="mx-2 px-2 py-1 border-cantidad border-cantidad"
-        id="contador"
-      >
+      <p className="mx-2 px-2 py-1 border-cantidad border-cantidad">
         {contador}
       </p>
       <button

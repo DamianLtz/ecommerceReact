@@ -1,6 +1,6 @@
-import React, { /* useState, useEffect, */ useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-// import axios from "axios";
+import axios from "axios";
 
 import Navbar from "../components/home/Navbar";
 import Footer from "../components/home/Footer";
@@ -8,18 +8,15 @@ import Loader from "../components/common/Loader";
 
 import BuyItem from "../components/common/BuyItem";
 
-import { ProductosContext } from "../contexts/ListaProductos";
-
 const DescripcionProducto = () => {
   const { id } = useParams();
-  // const [productos, setProductos] = useState([]);
-  const { productos } = useContext(ProductosContext);
+  const [productos, setProductos] = useState([]);
 
-  // useEffect(() => {
-  //   axios
-  //     .get("https://api.jsonbin.io/b/616cadd44a82881d6c619462/8")
-  //     .then((response) => setProductos(response.data.listaProductos));
-  // }, []);
+  useEffect(() => {
+    axios
+      .get("https://api.jsonbin.io/b/616cadd44a82881d6c619462/8")
+      .then((response) => setProductos(response.data.listaProductos));
+  }, []);
 
   const producto = productos[id];
 
