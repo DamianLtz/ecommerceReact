@@ -7,6 +7,7 @@ import Footer from "../components/home/Footer";
 import Loader from "../components/common/Loader";
 
 import BuyItem from "../components/common/BuyItem";
+import JSON from "../components/common/ListaProductos"
 
 const DescripcionProducto = () => {
   const { id } = useParams();
@@ -14,11 +15,12 @@ const DescripcionProducto = () => {
 
   useEffect(() => {
     axios
-      .get("https://api.jsonbin.io/b/616cadd44a82881d6c619462/8")
+      .get(JSON)
       .then((response) => setProductos(response.data.listaProductos));
   }, []);
 
   const producto = productos[id];
+  console.log(producto)
 
   return productos.length ? (
     <>

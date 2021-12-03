@@ -4,12 +4,14 @@ import { createContext, useContext } from "react";
 export const CartContext = createContext();
 
 export const useCartContext = () => useContext(CartContext);
-// Componente que contiene toda la logica del Contexto
+
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+
   /* Funcion de agregar al carrito, esta funcion va a editar el state del context
 y contendra toda la logica necesaria,por ejemplo buscamos el item y si existe solo le sumamos 
 la cantidad nueva*/
+
   const addItem = (producto, cantidad, stock) => {
     if (producto.quantity >= stock) {
       return false;
@@ -32,7 +34,6 @@ la cantidad nueva*/
     if (product.quantity === 1) {
       return false;
     }
-    // console.log(product)
     if (product) {
       /*Si el producto esta en cart, le sumamos la nueva cantidad, si no, solo lo agregamos */
       return setCart([
