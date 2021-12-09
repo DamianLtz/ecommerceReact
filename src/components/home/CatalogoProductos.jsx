@@ -1,19 +1,40 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
+// import axios from "axios" // Versión anterior de traer elementos del JSON.
+// import JSON from "../common/ListaProductos";
 import { useParams } from "react-router";
 import Productos from "./CardProducto";
 import Loader from "../common/Loader";
-import JSON from "../common/ListaProductos";
 
 const CatalogoProductos = () => {
   const { name } = useParams();
   const [productos, setProductos] = useState([]);
-  /* ------------------------------- Version Nueva para traer datos del JSON ----------------------------------------------------------- */
+
+  /* ------------------------------- Version Anterior para traer datos del JSON ----------------------------------------------------------- */
+  // useEffect(() => {
+  //   axios
+  //     .get(JSON)
+  //     .then((response) => setProductos(response.data.listaProductos));
+  // }, [setProductos]);
+
+  /* ------------------------------- Version Nueva para traer los elementos ----------------------------------------------------------- */
+
+  // --------- Traigo la Coleccion de elementos de Firebase ---------------- //
+
   useEffect(() => {
-    axios
-      .get(JSON)
-      .then((response) => setProductos(response.data.listaProductos));
-  }, [setProductos]);
+    const db = getFirestore();
+    const productosCollection = collection(db, "ListaProductos");
+
+    getDocs(productosCollection).then((snapshot) => {
+      setProductos(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }))
+      );
+    });
+  }, []);
+
   /* ------------------------------------------------------------------------------------------ */
 
   const filtrarPorCategoria = (productos) => {

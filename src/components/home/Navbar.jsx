@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 
 import CartWidget from "../common/CartWidget";
 
-
 import logo from "../../img/header/logo.svg";
 import search from "../../img/header/search.svg";
 import coin from "../../img/main/coin.png";
+import { UserContext } from "../../contexts/UserContext";
 
 const Header = () => {
+  const { getUser } = useContext(UserContext);
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light w-100 position-fixed fixed-top">
       <div className="container-lg">
@@ -47,20 +48,11 @@ const Header = () => {
             <NavLink to="/Carrito">
               <CartWidget />
             </NavLink>
-            <div
-              className="d-none align-items-center ms-3"
-              id="monto-container"
-            >
+            <div className="d-flex align-items-center ms-3">
               <img src={coin} alt="" className="coin" />
-              <p id="monto"></p>
+              <p>45500</p>
             </div>
-            <NavLink
-              to="/inicioSesion"
-              id="usuario-actual"
-              className="fw-bold log-in"
-            >
-              Ingresar a mi cuenta
-            </NavLink>
+            {getUser()}
           </div>
         </div>
       </div>

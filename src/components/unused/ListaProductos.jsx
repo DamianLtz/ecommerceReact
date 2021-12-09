@@ -1,15 +1,4 @@
-import { useState, createContext } from "react";
+const JSON = "https://api.jsonbin.io/b/61a7e88162ed886f915851a7" /* JSON Productos */
+// const JSON = "https://api.jsonbin.io/b/61a517d80ddbee6f8b141476/5" /* JSON Prueba */
 
-export const ProductosContext = createContext();
-
-const ProductosProvider = ({ children }) => {
-  const [productos, setProductos] = useState([]);
-
-  return (
-    <ProductosContext.Provider value={{ productos, setProductos }} displayName="Productos">
-      {children}
-    </ProductosContext.Provider>
-  );
-};
-
-export default ProductosProvider;
+export default JSON

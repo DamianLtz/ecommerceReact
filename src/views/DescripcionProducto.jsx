@@ -1,22 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import axios from "axios";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 import Navbar from "../components/home/Navbar";
 import Footer from "../components/home/Footer";
 import Loader from "../components/common/Loader";
-
 import BuyItem from "../components/common/BuyItem";
-import JSON from "../components/common/ListaProductos"
 
 const DescripcionProducto = () => {
   const { id } = useParams();
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(JSON)
-      .then((response) => setProductos(response.data.listaProductos));
+    const db = getFirestore();
+    const productosCollection = collection(db, "ListaProductos");
+
+    getDocs(productosCollection).then((snapshot) => {
+      setProductos(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }))
+      );
+    });
   }, []);
 
   const producto = productos[id];

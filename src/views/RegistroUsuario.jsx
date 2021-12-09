@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-
 import twitter from "../img/main/log-in/twitter-icon.svg";
 import github from "../img/main/log-in/github-icon.svg";
+import { UserContext } from "../contexts/UserContext";
 
 const RegistroUsuario = () => {
+  const { clickRegistro } = useContext(UserContext);
   const [registroExitoso, cambiarRegistroExistoso] = useState(false);
   return (
     <main className="body-style vh-100">
@@ -17,40 +18,32 @@ const RegistroUsuario = () => {
         }}
         validate={(valores) => {
           let errores = {};
-          if (!valores.nombre) {
-            errores.nombre = "Nombre incorrecto";
-          } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.nombre)) {
+          if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.nombre)) {
             errores.nombre = "Nombre incorrecto";
           }
 
-          if (!valores.apellido) {
-            errores.apellido = "Apellido Incorrecto";
-          } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.apellido)) {
+          if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.apellido)) {
             errores.apellido = "Apellido Incorrecto";
           }
 
-          if (!valores.email) {
-            errores.email = "E-mail Incorrecto";
-          } else if (
+          if (
             !/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(
               valores.email
             )
           ) {
             errores.email = "E-mail Incorrecto";
           }
-
-          if (!valores.password) {
-            errores.password = "Contraseña Invalida";
-          } else if (!/^.{4,12}$/.test(valores.password)) {
+          if (!/^.{4,12}$/.test(valores.password)) {
             errores.password = "Contraseña Invalida";
           }
 
           return errores;
         }}
         onSubmit={(valores, { resetForm }) => {
+          clickRegistro(valores);
           resetForm();
           cambiarRegistroExistoso(true);
-          setTimeout(() => (window.location.href = "index.html"), 450);
+          // setTimeout(() => (window.location.href = "/"), 450);
         }}
       >
         {({ errors }) => (
@@ -203,7 +196,7 @@ const RegistroUsuario = () => {
                   Al presionar "Registrarse" esta aceptando nuestros terminos y
                   condiciones.
                 </p>
-                <button type="submit" id="boton-registro">
+                <button type="submit">
                   Registrarse
                 </button>
               </div>
