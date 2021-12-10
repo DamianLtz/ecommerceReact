@@ -24,7 +24,7 @@ la cantidad nueva*/
         { ...product, quantity: product.quantity + cantidad }, // cantidad = contador *Chequear aqui mañana*
       ]);
     }
-    setCart([...cart, { ...producto, quantity: cantidad }]);
+    setCart([...cart, { ...producto, quantity: cantidad, order: cart.length, price: producto.price * cantidad}]);
   };
 
   // -------------------------------------- //
@@ -38,7 +38,7 @@ la cantidad nueva*/
       /*Si el producto esta en cart, le sumamos la nueva cantidad, si no, solo lo agregamos */
       return setCart([
         ...removeDuplicateItem(producto.id), // devuelve los elementos distintos al seleccionado
-        { ...product, quantity: product.quantity - cantidad }, // cantidad = contador *Chequear aqui mañana*
+        { ...product, quantity: product.quantity - cantidad, price: product.price / cantidad}, // cantidad = contador *Chequear aqui mañana*
       ]);
     }
     setCart([...cart, producto]);
@@ -54,8 +54,8 @@ eleminiarias ese item del carrito
 eleminiarias ese item del carrito
 */
   const removeItem = (id) => {
-    const productos = cart.filter((element) => element.id !== id);
-    return setCart([...productos]);
+    const productosInCart = cart.filter((element) => element.id !== id);
+    return setCart([...productosInCart]);
   };
   /* Funcion por si tienes un boton "Eliminar todo" en el cart, borrarias todo sin mas */
   const clear = () => {
