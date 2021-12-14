@@ -66,8 +66,7 @@ const CatalogoProductos = () => {
     <section className="container-lg mt-5">
       <div
         className="d-flex align-items-center justify-content-lg-start justify-content-center px-lg-4 px-4 pb-4"
-        id="titulo-container"
-      >
+        id="titulo-container">
         <h2 className="text-nowrap">
           {name === "Todos" || name === "ecommerceReact" || !name
             ? "Catalogo de Productos"
@@ -76,8 +75,7 @@ const CatalogoProductos = () => {
       </div>
       <div
         className="row justify-content-lg-start justify-content-md-center cards-container"
-        id="seccionProductos"
-      >
+        id="seccionProductos">
         {!name || name === "Todos" || name === "ecommerceReact"
           ? catalogoTotalProductos(productos)
           : filtrarPorCategoria(productos)}

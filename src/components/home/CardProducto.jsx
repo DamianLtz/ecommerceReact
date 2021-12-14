@@ -11,8 +11,7 @@ const CardProducto = ({ image, title, price, id }) => {
         <Link
           className="bg-img-container"
           to={`/DescripcionProducto/${id}`}
-          id={id}
-        >
+          id={id}>
           <img
             src={image}
             alt=""

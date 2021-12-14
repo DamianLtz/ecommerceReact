@@ -1,16 +1,16 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect, useContext, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import Navbar from "../components/home/Navbar";
-import Footer from "../components/home/Footer";
 import { CartContext } from "../contexts/CartContext";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
+import Navbar from "../components/home/Navbar";
+import Footer from "../components/home/Footer";
 
 const Checkout = () => {
   const [pagoExitoso, setPagoExitoso] = useState(false);
   const [compradorActual, setCompradorActual] = useState([]);
+  const [idOrder, setIdOrder] = useState(null);
   const { cart, setCart } = useContext(CartContext);
-  // console.log(pagoExitoso);
 
   const cartTotal = (cart) => {
     let montoTotal = 0;
@@ -20,17 +20,19 @@ const Checkout = () => {
     return montoTotal;
   };
 
-  // console.log(...cart)
-  console.log(compradorActual);
-
-  const firestoreOrder = () => {
+  const firestoreOrder = useCallback(() => {
     const db = getFirestore();
     const ordersCollection = collection(db, "Orders");
     addDoc(ordersCollection, { cart, compradorActual }).then(({ id }) => {
-      console.log(id);
-      return id;
+      setIdOrder(id);
     });
-  };
+  }, [cart, compradorActual]);
+
+  useEffect(() => {
+    if (pagoExitoso) {
+      return firestoreOrder();
+    }
+  }, [pagoExitoso, firestoreOrder]);
 
   return (
     <>
@@ -39,8 +41,7 @@ const Checkout = () => {
         id="exampleModal"
         tabIndex="-1"
         aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
+        aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
             {pagoExitoso === true ? (
@@ -51,7 +52,7 @@ const Checkout = () => {
                   </h5>
                 </div>
                 <div className="modal-body">
-                  <p>Su número de orden es: {firestoreOrder()}</p>
+                  <p>Su número de orden es: {idOrder}</p>
                   <p className="pt-3">
                     En su casilla de e-mail recibira más detalles de la compra
                   </p>
@@ -64,8 +65,7 @@ const Checkout = () => {
                       data-bs-dismiss="modal"
                       onClick={() => {
                         setCart([]);
-                      }}
-                    >
+                      }}>
                       Volver al catalogo
                     </button>
                   </Link>
@@ -81,8 +81,7 @@ const Checkout = () => {
                     type="button"
                     className="btn-close"
                     data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
+                    aria-label="Close"></button>
                 </div>
                 <div className="modal-body">
                   <p>
@@ -97,8 +96,7 @@ const Checkout = () => {
                   <button
                     type="button"
                     className="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                  >
+                    data-bs-dismiss="modal">
                     Cerrar
                   </button>
                 </div>
@@ -157,11 +155,9 @@ const Checkout = () => {
                     return errores;
                   }}
                   onSubmit={(valores) => {
-                    console.log(valores);
                     setCompradorActual(valores);
                     setPagoExitoso(true);
-                  }}
-                >
+                  }}>
                   {({ errors }) => (
                     <Form className="container-form">
                       <h1 className="text-dark pb-2 fs-5">Registrarse</h1>
@@ -186,8 +182,7 @@ const Checkout = () => {
                                     height="16"
                                     fill="#dc3545"
                                     className="bi bi-exclamation-circle"
-                                    viewBox="0 0 16 16"
-                                  >
+                                    viewBox="0 0 16 16">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                                     <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
                                   </svg>
@@ -216,8 +211,7 @@ const Checkout = () => {
                                     height="16"
                                     fill="#dc3545"
                                     className="bi bi-exclamation-circle"
-                                    viewBox="0 0 16 16"
-                                  >
+                                    viewBox="0 0 16 16">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                                     <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
                                   </svg>
@@ -247,8 +241,7 @@ const Checkout = () => {
                                   height="16"
                                   fill="#dc3545"
                                   className="bi bi-exclamation-circle"
-                                  viewBox="0 0 16 16"
-                                >
+                                  viewBox="0 0 16 16">
                                   <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                                   <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
                                 </svg>
@@ -277,8 +270,7 @@ const Checkout = () => {
                                   height="16"
                                   fill="#dc3545"
                                   className="bi bi-exclamation-circle"
-                                  viewBox="0 0 16 16"
-                                >
+                                  viewBox="0 0 16 16">
                                   <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                                   <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
                                 </svg>
@@ -294,8 +286,7 @@ const Checkout = () => {
                             type="submit"
                             className="btn btn-primary mt-3"
                             data-bs-toggle="modal"
-                            data-bs-target="#exampleModal"
-                          >
+                            data-bs-target="#exampleModal">
                             Pagar
                           </button>
                         </div>

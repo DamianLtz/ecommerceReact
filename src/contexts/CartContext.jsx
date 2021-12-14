@@ -81,8 +81,7 @@ eleminiarias ese item del carrito
         removeItem,
         clear,
       }}
-      displayName="Cart"
-    >
+      displayName="Cart">
       {children}
     </CartContext.Provider>
   );

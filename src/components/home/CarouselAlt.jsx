@@ -11,15 +11,14 @@ import CarouselFifth from "../../img/main/carousel/banner10.png";
 const MainCarouselAlt = () => {
   return (
     <Carousel
-      autoPlay={false}
+      autoPlay={true}
       emulateTouch={true}
       infiniteLoop={true}
       showThumbs={false}
       showIndicators={false}
       showStatus={false}
       dynamicHeight={true}
-      transitionTime={450}
-    >
+      transitionTime={450}>
       <div className="carousel-alt-item">
         <img src={CarouselFifth} alt="" />
         <div className="container-title-carousel">

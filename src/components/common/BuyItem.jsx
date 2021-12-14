@@ -29,18 +29,15 @@ const BuyItem = ({ producto }) => {
           onClick={() => {
             addItem(producto, contador);
             setContador(1);
-          }}
-        >
+          }}>
           Agregar al carrito
         </button>
-
         <div
           className="modal fade"
           id="exampleModal"
           tabIndex="-1"
           aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
+          aria-hidden="true">
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
@@ -51,8 +48,7 @@ const BuyItem = ({ producto }) => {
                   type="button"
                   className="btn-close"
                   data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
+                  aria-label="Close"></button>
               </div>
               <div className="modal-body">
                 Seleccione una opción para continuar o presione "X".
@@ -62,8 +58,7 @@ const BuyItem = ({ producto }) => {
                   <button
                     type="button"
                     className="btn btn-primary"
-                    data-bs-dismiss="modal"
-                  >
+                    data-bs-dismiss="modal">
                     Seguir comprando
                   </button>
                 </Link>
@@ -71,8 +66,7 @@ const BuyItem = ({ producto }) => {
                   <button
                     type="button"
                     className="btn btn-success"
-                    data-bs-dismiss="modal"
-                  >
+                    data-bs-dismiss="modal">
                     Ir Al Carrito
                   </button>
                 </Link>

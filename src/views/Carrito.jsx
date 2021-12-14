@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Navbar from "../components/home/Navbar";
 import Footer from "../components/home/Footer";
 
@@ -9,6 +9,11 @@ import CartEmptyMsg from "../components/common/CartEmptyMsg";
 
 const Carrito = () => {
   const { cart } = useContext(CartContext);
+  const [sortCart, setSortCart] = useState([]);
+  useEffect(() => {
+    let sort = cart.sort((a, b) => a.order - b.order);
+    setSortCart(sort);
+  }, [cart]);
   return (
     <>
       <header>
@@ -18,10 +23,10 @@ const Carrito = () => {
         <section className="container-lg">
           <h1 className="pt-5 fs-3">Tu carrito</h1>
           <div className="container-shopcart mt-5 p-lg-5 p-sm-4 p-3 g-3">
-            {cart.length === 0 || cart === [] ? (
+            {!sortCart || sortCart === [] ? (
               <CartEmptyMsg />
             ) : (
-              cart.map((item) => {
+              sortCart.map((item) => {
                 return (
                   <ItemCarrito
                     producto={item}

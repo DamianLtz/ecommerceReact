@@ -4,7 +4,7 @@ import ButtonCategoria from "../common/BotonCategoria";
 
 const BotonesCategorias = () => {
   const [categorias, setCategorias] = useState([]);
-  
+
   useEffect(() => {
     const db = getFirestore();
     const productosCollection = collection(db, "ListaCategorias");

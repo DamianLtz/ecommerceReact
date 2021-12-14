@@ -33,7 +33,9 @@ const ItemCarrito = ({
               <div className="d-flex align-items-center container-price">
                 <div className="d-flex align-items-center py-2 py-lg-0 order-3 order-lg-0">
                   <img src={Coin} alt="" className="coin" />
-                  <p className="text-dark fs-4 mx-1 mx-xl-2">{price * quantity}</p>
+                  <p className="text-dark fs-4 mx-1 mx-xl-2">
+                    {price * quantity}
+                  </p>
                 </div>
                 <p className="text-muted pe-0 pe-lg-1">Unidades:</p>
                 <div className="container-buttons py-2">
@@ -41,8 +43,7 @@ const ItemCarrito = ({
                     className="border border-primary p-0 bg-primary rounded-circle"
                     onClick={() => {
                       minusItem(producto, 1);
-                    }}
-                  >
+                    }}>
                     <img src={Minus} alt="restar" />
                   </button>
                   <p className="mx-2 px-2 py-1 border-cantidad">{quantity}</p>
@@ -50,8 +51,7 @@ const ItemCarrito = ({
                     className="border border-primary p-0 bg-primary rounded-circle"
                     onClick={() => {
                       addItem(producto, 1, stock);
-                    }}
-                  >
+                    }}>
                     <img src={Add} alt="sumar" />
                   </button>
                 </div>
@@ -61,16 +61,14 @@ const ItemCarrito = ({
                   className="btn btn-danger p-1 mt-2 mt-lg-0 ms-0 ms-lg-1 w-100 d-lg-block d-none"
                   onClick={() => {
                     removeItem(id);
-                  }}
-                >
+                  }}>
                   <img src={Trash} alt="" className="coin" />
                 </button>
                 <button
                   className="btn btn-danger p-1 mt-2 mt-lg-0 ms-0 ms-lg-1 w-100 d-block d-lg-none"
                   onClick={() => {
                     removeItem(id);
-                  }}
-                >
+                  }}>
                   Eliminar
                 </button>
               </div>
