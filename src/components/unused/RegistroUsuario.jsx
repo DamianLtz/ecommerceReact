@@ -43,7 +43,7 @@ const RegistroUsuario = () => {
           clickRegistro(valores);
           resetForm();
           cambiarRegistroExistoso(true);
-          // setTimeout(() => (window.location.href = "/"), 450);
+          setTimeout(() => (window.location.href = "/"), 450);
         }}
       >
         {({ errors }) => (

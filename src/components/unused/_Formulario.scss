@@ -9,24 +9,16 @@
   background-position: center;
 }
 .container-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   max-width: 375px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  backdrop-filter: blur(8px);
-  // background-color: #f8f9fa;
-  background: #74ebd5;
-  background: -webkit-linear-gradient(
-    to right,
-    rgba(172, 182, 229, 0.2),
-    rgba(116, 235, 213, 0.2)
-  );
-  background: linear-gradient(
-    to right,
-    rgb(172, 182, 229, 0.2),
-    rgb(116, 235, 213, 0.2)
-  );
-
+  // backdrop-filter: blur(8px)
+  background-color: #f8f9fa;
   border: 0.7px solid rgba(32, 32, 32, 0.2);
   align-items: center;
   justify-content: space-around;
@@ -119,9 +111,14 @@
     border: none;
     outline: none;
     padding: 0;
+    background-color: $bg-color-registro;
     color: $color-white;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
       border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:hover {
+      background-color: $bg-color-registro-hover;
+    }
   }
 }
 .other-content {

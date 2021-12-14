@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
-// import axios from "axios" // Versión anterior de traer elementos del JSON.
-// import JSON from "../common/ListaProductos";
 import { useParams } from "react-router";
 import Productos from "./CardProducto";
 import Loader from "../common/Loader";
@@ -9,15 +7,6 @@ import Loader from "../common/Loader";
 const CatalogoProductos = () => {
   const { name } = useParams();
   const [productos, setProductos] = useState([]);
-
-  /* ------------------------------- Version Anterior para traer datos del JSON ----------------------------------------------------------- */
-  // useEffect(() => {
-  //   axios
-  //     .get(JSON)
-  //     .then((response) => setProductos(response.data.listaProductos));
-  // }, [setProductos]);
-
-  /* ------------------------------- Version Nueva para traer los elementos ----------------------------------------------------------- */
 
   // --------- Traigo la Coleccion de elementos de Firebase ---------------- //
 

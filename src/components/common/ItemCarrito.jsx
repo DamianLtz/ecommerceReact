@@ -33,7 +33,7 @@ const ItemCarrito = ({
               <div className="d-flex align-items-center container-price">
                 <div className="d-flex align-items-center py-2 py-lg-0 order-3 order-lg-0">
                   <img src={Coin} alt="" className="coin" />
-                  <p className="text-dark fs-4 mx-1 mx-xl-2">{price}</p>
+                  <p className="text-dark fs-4 mx-1 mx-xl-2">{price * quantity}</p>
                 </div>
                 <p className="text-muted pe-0 pe-lg-1">Unidades:</p>
                 <div className="container-buttons py-2">

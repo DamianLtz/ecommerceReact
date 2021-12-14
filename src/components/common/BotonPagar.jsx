@@ -1,26 +1,16 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import Coin from "../../img/main/coin.png";
 import { CartContext } from "../../contexts/CartContext";
 const BotonPagar = ({ total }) => {
-  const { cart, clear } = useContext(CartContext);
-  // const cartTotal = () => {
-  //   const carrito = cart.sort((a, b) => a.order < b.order);
-  //   return carrito
-  // };
-  const cartTotal = (arregloOrigen) => {
-    let cartPrice = []; //Aquí se almacenaran los precios
-    let totalizado = 0; //Aquí se guardara el total
-    let item_precio = 0; // Aquí almacenare el valor de cada articulo en la iteración
-    arregloOrigen.map((item) => {
-      console.log(item);
-      return cartPrice.push(item.price);
-    });
+  const { cart } = useContext(CartContext);
 
-    for (let i = 0; i < cartPrice.length; i++) {
-      item_precio = cartPrice[i];
-      totalizado = totalizado + item_precio;
+  const cartTotal = (cart) => {
+    let montoTotal = 0;
+    for (const producto of cart) {
+      montoTotal = montoTotal + producto.price * producto.quantity;
     }
-    return totalizado;
+    return montoTotal;
   };
 
   return (
@@ -34,19 +24,11 @@ const BotonPagar = ({ total }) => {
               {total}
             </h4>
           </div>
-          <button
-            className="btn btn-primary"
-            onClick={() => {
-              clear();
-            }}
-          >
-            Pagar
-          </button>
+          <Link to="/Checkout" className="btn btn-primary">
+            Finalizar Compra
+          </Link>
         </div>
       </div>
-      {/* <p className="d-none text-danger text-end pt-2 pe-1 fw-bold">
-        Error , puntos insuficientes
-      </p> */}
     </>
   );
 };

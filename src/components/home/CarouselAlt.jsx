@@ -2,11 +2,11 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
-import CarouselOne from "../../img/main/banner1.jpg";
-import CarouselTwo from "../../img/main/banner4.jpg";
-import CarouselThree from "../../img/main/banner6.jpg";
-import CarouselFour from "../../img/main/banner7.webp";
-import CarouselFive from "../../img/main/banner8.png";
+import CarouselOne from "../../img/main/carousel/banner1.jpg";
+import CarouselTwo from "../../img/main/carousel/banner4.jpg";
+import CarouselThree from "../../img/main/carousel/banner6.jpg";
+import CarouselFour from "../../img/main/carousel/banner7.webp";
+import CarouselFifth from "../../img/main/carousel/banner10.png";
 
 const MainCarouselAlt = () => {
   return (
@@ -21,17 +21,19 @@ const MainCarouselAlt = () => {
       transitionTime={450}
     >
       <div className="carousel-alt-item">
-        <img src={CarouselOne} alt="" />
+        <img src={CarouselFifth} alt="" />
         <div className="container-title-carousel">
-          <h2 className="title-carousel">Auriculares Razer</h2>
-          <p className="subtitle-carousel">Distribuidor oficial de Razer!</p>
+          <h2 className="title-carousel">Nuevo Moto Edge 20 Pro</h2>
+          <p className="subtitle-carousel">Diseño moderno y elegante.</p>
         </div>
       </div>
       <div className="carousel-alt-item">
         <img src={CarouselTwo} alt="" />
         <div className="container-title-carousel">
           <h2 className="title-carousel">Haus Laboratories</h2>
-          <p className="subtitle-carousel">Maquillaje estreno en nuestra tienda!</p>
+          <p className="subtitle-carousel">
+            Maquillaje estreno en nuestra tienda!
+          </p>
         </div>
       </div>
       <div className="carousel-alt-item">
@@ -49,10 +51,10 @@ const MainCarouselAlt = () => {
         </div>
       </div>
       <div className="carousel-alt-item">
-        <img src={CarouselFive} alt="" />
+        <img src={CarouselOne} alt="" />
         <div className="container-title-carousel">
-          <h2 className="title-carousel">Carolina Herrera Good Girl</h2>
-          <p className="subtitle-carousel">Fragancia Importada</p>
+          <h2 className="title-carousel">Auriculares Razer</h2>
+          <p className="subtitle-carousel">Distribuidor oficial de Razer</p>
         </div>
       </div>
     </Carousel>

@@ -1,13 +1,10 @@
 import React from "react";
-//eslint-disable-next-line
-import { Routes, Route, Navigate } from "react-router-dom";
-
+import { Routes, Route } from "react-router-dom";
 import Home from "./Home";
-import IniciarSesion from "./IniciarSesion";
-import RegistroUsuario from "./RegistroUsuario";
 import Carrito from "./Carrito";
 import DescripcionProducto from "./DescripcionProducto";
 import CatalogoProductos from "../components/home/CatalogoProductos";
+import Checkout from "./Checkout";
 
 const routes = () => {
   return (
@@ -16,11 +13,9 @@ const routes = () => {
         <Route path="/" element={<Home />}>
           <Route path=":name" element={<CatalogoProductos />} />
         </Route>
-        <Route path={`/DescripcionProducto/:id`} element={<DescripcionProducto />} />
-        <Route path="/inicioSesion" element={<IniciarSesion />} />
-        <Route path="/registroUsuario" element={<RegistroUsuario />} />
+        <Route path={`/DescripcionProducto/:id`} element={<DescripcionProducto />}/>
         <Route path="/Carrito" element={<Carrito />} />
-        {/* <Route path="*" element={<Navigate replace to="/" />} />  */} {/* No Funciona. */}
+        <Route path="/Checkout" element={<Checkout />} />
       </Routes>
     </>
   );

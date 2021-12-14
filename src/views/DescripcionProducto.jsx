@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 import Navbar from "../components/home/Navbar";
 import Footer from "../components/home/Footer";
@@ -9,26 +9,19 @@ import BuyItem from "../components/common/BuyItem";
 
 const DescripcionProducto = () => {
   const { id } = useParams();
-  const [productos, setProductos] = useState([]);
-
+  const [producto, setProducto] = useState([]);
   useEffect(() => {
     const db = getFirestore();
-    const productosCollection = collection(db, "ListaProductos");
 
-    getDocs(productosCollection).then((snapshot) => {
-      setProductos(
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }))
-      );
+    const productoRef = doc(db, "ListaProductos", id);
+    getDoc(productoRef).then((snapshot) => {
+      if (snapshot.exists()) {
+        setProducto({ ...snapshot.data(), id: snapshot.id });
+      }
     });
-  }, []);
+  }, [id]);
 
-  const producto = productos[id];
-  console.log(producto)
-
-  return productos.length ? (
+  return Object.keys(producto).length ? (
     <>
       <header>
         <Navbar />
@@ -85,7 +78,7 @@ const DescripcionProducto = () => {
             <div className="col-lg-5 col-md-5 ms-0 ms-md-5 d-flex flex-column justify-content-center">
               <h1 className="pt-4 pt-lg-0 pb-3 pb-lg-2">{producto.title}</h1>
               <p className="description-truncate">{producto.longDescription}</p>
-              <BuyItem producto={producto}/>
+              <BuyItem producto={producto} />
             </div>
           </div>
         </section>

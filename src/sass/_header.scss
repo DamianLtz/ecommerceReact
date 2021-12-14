@@ -10,7 +10,7 @@
   height: 32px;
 }
 .navbar-light {
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  // box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   .navbar-collapse {
     flex-grow: 0.5;
     .navbar-nav {
@@ -38,7 +38,7 @@
   display: flex;
   align-items: center;
   @media screen and (max-width: 991px) {
-    padding: 1.5rem 0.8rem;
+    // padding: 1.5rem 0.8rem;
     justify-content: center;
   }
 
@@ -61,6 +61,9 @@
     background-size: 0% 2px;
     transition: background-size 0.3s;
     margin: 0 1rem;
+    @media (max-width: 991px) {
+      font-size: 0.875rem;
+    }
     &:hover {
       color: $color-blue;
       background-size: 100% 2px;

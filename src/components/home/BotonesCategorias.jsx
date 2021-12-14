@@ -1,17 +1,10 @@
 import React, { useEffect, useState } from "react";
-// import axios from "axios";
-// import JSON from "../common/ListaProductos";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import ButtonCategoria from "../common/BotonCategoria";
 
 const BotonesCategorias = () => {
   const [categorias, setCategorias] = useState([]);
-  // useEffect(() => {
-  //   axios
-  //     .get(JSON)
-  //     .then((response) => setCategorias(response.data.listaCategorias));
-  // }, []);
-  // ------------------------------------------------------------- //
+  
   useEffect(() => {
     const db = getFirestore();
     const productosCollection = collection(db, "ListaCategorias");

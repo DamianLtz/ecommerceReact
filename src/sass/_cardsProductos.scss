@@ -4,6 +4,10 @@
     display: flex;
     justify-content: center;
     .card {
+      transition: box-shadow 0.3s ease-in-out;
+      &:hover{
+        box-shadow: rgba(63, 63, 63, 0.15) 0px 5px 15px;
+      }
       width: 18em;
       filter: drop-shadow(0px 16px 32px rgba(0, 0, 0, 0.15));
       border-radius: 15px;

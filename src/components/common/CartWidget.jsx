@@ -3,9 +3,6 @@ import { CartContext } from "../../contexts/CartContext";
 
 import shoppingCart from "../../img/header/shopping-cart.svg";
 
-// const listaProductosPrueba = ["Carne","Agua","Tomates","Lechugas"]
-// puedo usar ".length" para que el númerito del carrito tome la cantidad de items que hay en el carrito actualmente.
-
 const CartWidget = () => {
   const { cart } = useContext(CartContext);
   const contadorProductos = () => {
@@ -16,10 +13,13 @@ const CartWidget = () => {
     );
   };
   return (
-    <button className="position-relative shop-cart-container bg-transparent border-0">
-      <img src={shoppingCart} alt="" className="shop-cart" />
-      {cart.length > 0 ? contadorProductos() : null}
-    </button>
+    <div className="d-flex align-items-center">
+      <button className="position-relative shop-cart-container bg-transparent border-0">
+        <img src={shoppingCart} alt="" className="shop-cart" />
+        {cart.length > 0 ? contadorProductos() : null}
+      </button>
+      <p className="fw-bold log-in">Ir al Carrito</p>
+    </div>
   );
 };
 
