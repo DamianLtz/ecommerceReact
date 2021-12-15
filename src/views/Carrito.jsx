@@ -23,7 +23,7 @@ const Carrito = () => {
         <section className="container-lg">
           <h1 className="pt-5 fs-3">Tu carrito</h1>
           <div className="container-shopcart mt-5 p-lg-5 p-sm-4 p-3 g-3">
-            {!sortCart || sortCart === [] ? (
+            {!sortCart.length || cart === [] ? (
               <CartEmptyMsg />
             ) : (
               sortCart.map((item) => {

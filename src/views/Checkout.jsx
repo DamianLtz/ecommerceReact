@@ -5,6 +5,7 @@ import { CartContext } from "../contexts/CartContext";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import Navbar from "../components/home/Navbar";
 import Footer from "../components/home/Footer";
+import Coin from "../img/main/coin.png";
 
 const Checkout = () => {
   const [pagoExitoso, setPagoExitoso] = useState(false);
@@ -118,7 +119,6 @@ const Checkout = () => {
                     nombre: "",
                     apellido: "",
                     email: "",
-                    password: "",
                   }}
                   validate={(valores) => {
                     let errores = {};
@@ -145,13 +145,6 @@ const Checkout = () => {
                     ) {
                       errores.email = "E-mail Incorrecto";
                     }
-
-                    if (!valores.password) {
-                      errores.password = "Contraseña Invalida";
-                    } else if (!/^.{4,12}$/.test(valores.password)) {
-                      errores.password = "Contraseña Invalida";
-                    }
-
                     return errores;
                   }}
                   onSubmit={(valores) => {
@@ -160,7 +153,9 @@ const Checkout = () => {
                   }}>
                   {({ errors }) => (
                     <Form className="container-form">
-                      <h1 className="text-dark pb-2 fs-5">Registrarse</h1>
+                      <h1 className="text-dark pb-2 fs-5">
+                        Complete sus datos
+                      </h1>
                       <div className="inputs">
                         <div className="name-input">
                           <div className="input-nombre">
@@ -252,35 +247,6 @@ const Checkout = () => {
                             )}
                           />
                         </div>
-                        <div className="others-input">
-                          <label htmlFor="password">Contraseña</label>
-                          <Field
-                            type="password"
-                            placeholder="Ingrese su contraseña"
-                            name="password"
-                            className="input-correcto"
-                          />
-                          <ErrorMessage
-                            name="password"
-                            component={() => (
-                              <div className="d-flex align-items-center ps-1 pt-2">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="16"
-                                  height="16"
-                                  fill="#dc3545"
-                                  className="bi bi-exclamation-circle"
-                                  viewBox="0 0 16 16">
-                                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                                </svg>
-                                <p className="ps-1 text-danger">
-                                  {errors.password}
-                                </p>
-                              </div>
-                            )}
-                          />
-                        </div>
                         <div className="btn-box">
                           <button
                             type="submit"
@@ -305,12 +271,13 @@ const Checkout = () => {
                     {cart.length}
                   </span>
                 </p>
-                <p className="fs-3 pt-3">
-                  Precio Total:
-                  <span className="fs-3 fw-bold text-primary ps-2">{`$ ${cartTotal(
+                <div className="d-flex align-items-center pt-3">
+                  <p className="fs-3">Precio Total:</p>
+                  <img src={Coin} alt="" className="coin mx-2" />
+                  <span className="fs-3 text-primary fw-bold">{`${cartTotal(
                     cart
                   )}`}</span>
-                </p>
+                </div>
               </div>
             </div>
           </div>
