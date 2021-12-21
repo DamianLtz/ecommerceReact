@@ -1,24 +1,20 @@
 {
   "files": {
-    "main.css": "/ecommerceReact/static/css/main.68e23fb8.chunk.css",
-    "main.js": "/ecommerceReact/static/js/main.9f9678aa.chunk.js",
-    "main.js.map": "/ecommerceReact/static/js/main.9f9678aa.chunk.js.map",
+    "main.css": "/ecommerceReact/static/css/main.74ea29ae.chunk.css",
+    "main.js": "/ecommerceReact/static/js/main.fd2d30cc.chunk.js",
+    "main.js.map": "/ecommerceReact/static/js/main.fd2d30cc.chunk.js.map",
     "runtime-main.js": "/ecommerceReact/static/js/runtime-main.b6e606c2.js",
     "runtime-main.js.map": "/ecommerceReact/static/js/runtime-main.b6e606c2.js.map",
     "static/css/2.ed1298f3.chunk.css": "/ecommerceReact/static/css/2.ed1298f3.chunk.css",
-    "static/js/2.0392dea3.chunk.js": "/ecommerceReact/static/js/2.0392dea3.chunk.js",
-    "static/js/2.0392dea3.chunk.js.map": "/ecommerceReact/static/js/2.0392dea3.chunk.js.map",
+    "static/js/2.a03beb43.chunk.js": "/ecommerceReact/static/js/2.a03beb43.chunk.js",
+    "static/js/2.a03beb43.chunk.js.map": "/ecommerceReact/static/js/2.a03beb43.chunk.js.map",
     "index.html": "/ecommerceReact/index.html",
     "static/css/2.ed1298f3.chunk.css.map": "/ecommerceReact/static/css/2.ed1298f3.chunk.css.map",
-    "static/css/main.68e23fb8.chunk.css.map": "/ecommerceReact/static/css/main.68e23fb8.chunk.css.map",
-    "static/js/2.0392dea3.chunk.js.LICENSE.txt": "/ecommerceReact/static/js/2.0392dea3.chunk.js.LICENSE.txt",
+    "static/css/main.74ea29ae.chunk.css.map": "/ecommerceReact/static/css/main.74ea29ae.chunk.css.map",
+    "static/js/2.a03beb43.chunk.js.LICENSE.txt": "/ecommerceReact/static/js/2.a03beb43.chunk.js.LICENSE.txt",
     "static/media/add.e7e53503.svg": "/ecommerceReact/static/media/add.e7e53503.svg",
+    "static/media/aviso.d6d451cd.png": "/ecommerceReact/static/media/aviso.d6d451cd.png",
     "static/media/styles.scss": "/ecommerceReact/static/media/chevron-right.8563e472.svg",
-    "static/media/banner1.fd657695.jpg": "/ecommerceReact/static/media/banner1.fd657695.jpg",
-    "static/media/banner10.9751f149.png": "/ecommerceReact/static/media/banner10.9751f149.png",
-    "static/media/banner4.07c81d51.jpg": "/ecommerceReact/static/media/banner4.07c81d51.jpg",
-    "static/media/banner6.cab0b270.jpg": "/ecommerceReact/static/media/banner6.cab0b270.jpg",
-    "static/media/banner7.beca12ea.webp": "/ecommerceReact/static/media/banner7.beca12ea.webp",
     "static/media/coin.86d4f8d7.png": "/ecommerceReact/static/media/coin.86d4f8d7.png",
     "static/media/electro.c25ab781.png": "/ecommerceReact/static/media/electro.c25ab781.png",
     "static/media/electrobelleza.ac790bfc.png": "/ecommerceReact/static/media/electrobelleza.ac790bfc.png",
@@ -33,8 +29,8 @@
   "entrypoints": [
     "static/js/runtime-main.b6e606c2.js",
     "static/css/2.ed1298f3.chunk.css",
-    "static/js/2.0392dea3.chunk.js",
-    "static/css/main.68e23fb8.chunk.css",
-    "static/js/main.9f9678aa.chunk.js"
+    "static/js/2.a03beb43.chunk.js",
+    "static/css/main.74ea29ae.chunk.css",
+    "static/js/main.fd2d30cc.chunk.js"
   ]
 }
