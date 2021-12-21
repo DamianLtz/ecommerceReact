@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import electro from "../../img/main/electro.png";
 import electroBelleza from "../../img/main/electrobelleza.png";
 
@@ -13,9 +13,11 @@ const CardsCategorias = () => {
               <h2 className="fw-normal">Lo Mejor en</h2>
               <h2>Electro</h2>
               <div>
-                <a href="/" className="btn btn-mas shadow-none">
+                <Link
+                  to="/UnderConstruction"
+                  className="btn btn-mas shadow-none">
                   Ver Más
-                </a>
+                </Link>
               </div>
             </div>
             <div>
@@ -29,9 +31,11 @@ const CardsCategorias = () => {
               <h2 className="fw-normal">Lo Mejor en</h2>
               <h2>Electrobelleza</h2>
               <div>
-                <a href="/" className="btn btn-mas shadow-none">
+                <Link
+                  to="/UnderConstruction"
+                  className="btn btn-mas shadow-none">
                   Ver Más
-                </a>
+                </Link>
               </div>
             </div>
             <div>

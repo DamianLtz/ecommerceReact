@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -9,13 +10,13 @@ const Footer = () => {
             <h4>Mi Cuenta</h4>
             <ul id="footer-options">
               <li>
-                <a href="registro-cuenta.html">Crear Cuenta</a>
+                <Link to="/UnderConstruction">Crear Cuenta</Link>
               </li>
               <li>
-                <a href="#/">Mis datos</a>
+                <Link to="/UnderConstruction">Mis datos</Link>
               </li>
               <li>
-                <a href="#/">Mis canjes</a>
+                <Link to="/UnderConstruction">Mis canjes</Link>
               </li>
             </ul>
           </div>
@@ -23,10 +24,10 @@ const Footer = () => {
             <h4>Ayuda</h4>
             <ul>
               <li>
-                <a href="#/">Terminos y condiciones</a>
+                <Link to="/UnderConstruction">Terminos y condiciones</Link>
               </li>
               <li>
-                <a href="#/">Defensa del consumidor</a>
+                <Link to="/UnderConstruction">Defensa del consumidor</Link>
               </li>
             </ul>
           </div>
@@ -34,16 +35,16 @@ const Footer = () => {
             <h4>Información de la tienda</h4>
             <ul>
               <li>
-                <a href="#/">Argentina</a>
+                <Link to="/UnderConstruction">Argentina</Link>
               </li>
               <li>
-                <a href="#/">Botón de Arrepentimiento</a>
+                <Link to="/UnderConstruction">Botón de Arrepentimiento</Link>
               </li>
             </ul>
           </div>
         </div>
         <h6 className="text-center text-muted pt-5">
-          Proyecto CoderHouse: E-Commerce con React - Damian
+          E-Commerce con React - Damian
         </h6>
       </div>
     </footer>

@@ -31,35 +31,13 @@ const CatalogoProductos = () => {
       (producto) => producto.category === name
     );
     return productosFiltrados.map((producto) => {
-      return (
-        <Productos
-          producto={producto}
-          key={producto.id}
-          image={producto.image}
-          oldPrice={producto.oldPrice}
-          title={producto.title}
-          description={producto.description}
-          price={producto.price}
-          id={producto.id}
-        />
-      );
+      return <Productos key={producto.id} {...producto} />;
     });
   };
 
   const catalogoTotalProductos = () => {
     return productos.map((producto) => {
-      return (
-        <Productos
-          producto={producto}
-          key={producto.id}
-          image={producto.image}
-          oldPrice={producto.oldPrice}
-          title={producto.title}
-          description={producto.description}
-          price={producto.price}
-          id={producto.id}
-        />
-      );
+      return <Productos key={producto.id} {...producto} />;
     });
   };
   return productos.length ? (

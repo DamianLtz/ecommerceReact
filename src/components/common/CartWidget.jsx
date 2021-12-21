@@ -5,7 +5,7 @@ import shoppingCart from "../../img/header/shopping-cart.svg";
 
 const CartWidget = () => {
   const { cart } = useContext(CartContext);
-  const contadorProductos = () => {
+  const ContadorProductos = () => {
     return (
       <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
         {cart.length}
@@ -16,7 +16,7 @@ const CartWidget = () => {
     <div className="d-flex align-items-center">
       <button className="position-relative shop-cart-container bg-transparent border-0">
         <img src={shoppingCart} alt="" className="shop-cart" />
-        {cart.length > 0 ? contadorProductos() : null}
+        {cart.length > 0 ? <ContadorProductos /> : null}
       </button>
       <p className="fw-bold log-in">Ir al Carrito</p>
     </div>

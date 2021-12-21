@@ -52,10 +52,15 @@
 .control-arrow {
   &:hover {
     background: transparent !important;
+    opacity: .4 !important;
   }
   &:before {
     border: none !important;
   }
+}
+
+.control-arrow:focus{
+  opacity: .4 !important;
 }
 
 .control-prev {

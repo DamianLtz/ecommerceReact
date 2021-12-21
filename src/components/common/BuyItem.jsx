@@ -15,11 +15,12 @@ const BuyItem = ({ producto }) => {
         setContador={setContador}
         stock={producto.stock}
       />
-      <div className="d-flex align-items-center justify-content-center justify-content-md-start my-3">
+      <div className="d-flex align-items-center justify-content-center justify-content-md-start mt-3">
         <p>Comprar por:</p>
         <img src={coin} alt="" className="coin mx-2" />
         <p>{producto.price}</p>
       </div>
+      <p className="my-3">Stock disponible: {producto.stock}</p>
       <div className="d-flex justify-content-center justify-content-md-start mb-3">
         <button
           type="button"

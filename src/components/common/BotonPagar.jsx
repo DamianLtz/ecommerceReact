@@ -5,13 +5,8 @@ import { CartContext } from "../../contexts/CartContext";
 const BotonPagar = ({ total }) => {
   const { cart, setCart } = useContext(CartContext);
 
-  const cartTotal = (cart) => {
-    let montoTotal = 0;
-    for (const producto of cart) {
-      montoTotal = montoTotal + producto.price * producto.quantity;
-    }
-    return montoTotal;
-  };
+  const cartTotal = (cart) =>
+    cart.reduce((acc, e) => acc + e.price * e.quantity, 0);
 
   return (
     <>
@@ -20,11 +15,11 @@ const BotonPagar = ({ total }) => {
           <div className="d-flex align-items-center">
             <img src={Coin} alt="" className="coin me-2" />
             <p className="fw-light me-3 fs-4">{`Total: ${cartTotal(cart)}`}</p>
-            <h4 className="fw-light me-3">
-              {total}
-            </h4>
+            <h4 className="fw-light me-3">{total}</h4>
           </div>
-          <button className="btn btn-secondary me-2 me-lg-3" onClick={() => setCart([])}>
+          <button
+            className="btn btn-secondary me-2 me-lg-3"
+            onClick={() => setCart([])}>
             Vaciar Carrito
           </button>
           <Link to="/Checkout" className="btn btn-primary">

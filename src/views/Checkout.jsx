@@ -2,7 +2,14 @@ import React, { useState, useEffect, useContext, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { CartContext } from "../contexts/CartContext";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getFirestore,
+  addDoc,
+  writeBatch,
+} from "firebase/firestore";
+
 import Navbar from "../components/home/Navbar";
 import Footer from "../components/home/Footer";
 import Coin from "../img/main/coin.png";
@@ -13,13 +20,8 @@ const Checkout = () => {
   const [idOrder, setIdOrder] = useState(null);
   const { cart, setCart } = useContext(CartContext);
 
-  const cartTotal = (cart) => {
-    let montoTotal = 0;
-    for (const producto of cart) {
-      montoTotal = montoTotal + producto.price * producto.quantity;
-    }
-    return montoTotal;
-  };
+  const cartTotal = (cart) =>
+    cart.reduce((acc, e) => acc + e.price * e.quantity, 0);
 
   const firestoreOrder = useCallback(() => {
     const db = getFirestore();
@@ -30,10 +32,23 @@ const Checkout = () => {
   }, [cart, compradorActual]);
 
   useEffect(() => {
+    const updateStock = () => {
+      const db = getFirestore();
+
+      const batch = writeBatch(db);
+
+      cart.forEach((item) => {
+        const productosRef = doc(db, "ListaProductos", item.id);
+        batch.update(productosRef, { stock: item.stock - item.quantity });
+      });
+
+      batch.commit();
+    };
     if (pagoExitoso) {
+      updateStock();
       return firestoreOrder();
     }
-  }, [pagoExitoso, firestoreOrder]);
+  }, [pagoExitoso, firestoreOrder, cart]);
 
   return (
     <>
